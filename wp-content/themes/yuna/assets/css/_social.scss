@@ -1,0 +1,68 @@
+.social-wrapper{
+
+  a{
+    svg{
+      width: 100%;
+      height: auto;
+
+      path{
+        fill: $color-light;
+        transition: all 0.5s;
+      }
+    }
+    &.fb-icon{
+      &:hover{
+        svg{
+          path{
+            fill: #1877F2;
+          }
+        }
+      }
+    }
+    &.inlinc-icon{
+      &:hover{
+        svg{
+          path{
+            fill: #0072b1;
+          }
+        }
+      }
+    }
+    &.inst-icon{
+      &:hover{
+        svg{
+          path{
+            fill: #E4405F;
+          }
+        }
+      }
+    }
+    &.you-icon{
+      &:hover{
+        svg{
+          path{
+            fill: #c4302b;
+          }
+        }
+      }
+    }
+    &.tw-icon{
+      &:hover{
+        svg{
+          path{
+            fill: #00acee;
+          }
+        }
+      }
+    }
+    &.tg-icon{
+      &:hover{
+        svg{
+          path{
+            fill: #0088cc;
+          }
+        }
+      }
+    }
+  }
+}

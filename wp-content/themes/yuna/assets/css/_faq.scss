@@ -1,0 +1,83 @@
+.faq{
+  /*background-color: $color-light;*/
+  background-color: $color-white;
+
+  .block-title{
+    color: $color-black;
+  }
+
+  .accordion-faq{
+
+    .card{
+      margin-bottom: 10px;
+      /*border: none;*/
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 10px 1px rgba(0,0,0,.1);
+
+      .card-header {
+        border: none;
+        padding: 0;
+        /*background-color: rgba(34, 40, 49, 0.9);*/
+        background-color: $color-red;
+
+        .card-link {
+          color: $color-light !important;
+          position: relative;
+          padding: 15px 60px 15px 30px;
+          display: block;
+
+          .icon {
+            position: absolute;
+            width: 30px;
+            height: auto;
+            transition: all 0.5s;
+            right: 15px;
+            top: 50%;
+            transform-origin: center;
+            transform: translateY(-50%) rotate(180deg);
+
+            path {
+              fill: $color-light;
+              transition: all 0.5s;
+            }
+          }
+
+          &.collapsed {
+            .icon {
+              transform: translateY(-50%) rotate(0deg);
+            }
+          }
+        }
+      }
+
+      .card-body{
+        padding: 30px;
+        /*background-color: rgba(34, 40, 49, 0.8);*/
+        /*background-color: rgba(204,51,0,0.8);*/
+        /*background-color: rgba(0,0,0,0.5);*/
+        background-color: $color-white;
+        /*color: $color-light;*/
+        color: $color-black;
+
+        ul,
+        ol{
+          padding: 0;
+          margin-left: 20px;
+
+          li{
+            margin-bottom: 5px;
+
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+  }
+}

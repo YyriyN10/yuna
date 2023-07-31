@@ -1,0 +1,148 @@
+.site-footer{
+  /*background-color: $color-dark;*/
+  background-color: $color-white;
+  /*color: $color-light;*/
+  color: $color-black;
+  padding: 30px 0;
+
+  .content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    
+    @media(max-width: 992px){
+      flex-wrap: wrap;
+    }
+  }
+
+  .logo{
+    height: 70px;
+
+    @media(max-width: 992px){
+      height: 55px;
+    }
+
+    @media(max-width: 360px){
+      height: 40px;
+    }
+
+    img{
+      height: 100%;
+      width: auto;
+    }
+    svg{
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .footer-menu{
+    padding: 0;
+    margin: 0;
+
+    @media(max-width: 992px){
+      order: 5;
+    }
+
+    li{
+      list-style: none;
+
+      a{
+        /*color: $color-light !important;*/
+        color: $color-black;
+        opacity: 0.7;
+        transition: all 0.5s;
+
+        &:hover{
+          opacity: 1;
+        }
+      }
+
+      .sub-menu{
+        padding-left: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .contacts{
+    max-width: 30%;
+
+    @media(max-width: 992px){
+      max-width: 40%;
+    }
+
+    @media(max-width: 767px){
+      max-width: 65%;
+      margin-bottom: 15px;
+    }
+
+    @media(max-width: 440px){
+      max-width: 100%;
+      order: 3;
+      margin-top: 15px;
+    }
+
+
+    p,
+    a{
+      display: flex;
+      font-size: 16px;
+      /*color: $color-light !important;*/
+      color: $color-black;
+      margin-bottom: 10px;
+      transition: all 0.2s;
+      align-items: center;
+
+      svg{
+        margin-right: 10px;
+        width: 18px;
+        height: auto;
+
+        path{
+          /*fill: $color-light;*/
+          fill: $color-red;
+        }
+      }
+
+      span{
+        width: calc(100% - 28px);
+        opacity: 0.7;
+      }
+    }
+
+    a:hover{
+      opacity: 1;
+    }
+  }
+
+  .social-wrapper{
+    display: flex;
+    align-items: center;
+
+    a{
+      width: 20px;
+      margin-left: 10px;
+
+      @media(max-width: 360px){
+        width: 16px;
+      }
+
+      svg{
+        path{
+          fill: rgba(0,0,0,0.7);
+        }
+      }
+    }
+
+  }
+
+  .copy{
+    font-size: 16px;
+    padding-top: 30px;
+    margin-bottom: 0;
+    opacity: 0.7;
+  }
+}

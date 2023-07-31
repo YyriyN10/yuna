@@ -1,0 +1,121 @@
+.cases{
+  /*background-color: $color-gray;*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+
+  &:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background-color: $color-dark;*/
+    background-color: $color-white;
+    /*opacity: 0.7;*/
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  .container{
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-name{
+    color: $color-light;
+  }
+
+  .block-title{
+    /*color: $color-light;*/
+    color: $color-black;
+
+  }
+
+  .case-item{
+    @media(max-width: 992px){
+      margin-bottom: 30px;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    .inner{
+      /*background-color: $color-light;*/
+      background-color: $color-white;
+      height: 100%;
+      position: relative;
+      padding-bottom: 70px;
+      transition: all 0.5s;
+      border: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 1px 1px 10px 1px rgba(0,0,0,.1);
+    }
+
+    .prev-pic{
+      margin-bottom: 20px;
+      overflow: hidden;
+      position: relative;
+
+      &:before{
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        background-color: $color-white;
+        opacity: 0.5;
+        transition: all 0.5s;
+        z-index: 2;
+      }
+
+      img{
+        width: 100%;
+        height: auto;
+        transition: all 0.5s;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .name{
+      margin-bottom: 15px;
+      /*color: $color-dark !important;*/
+      color: $color-black !important;
+      padding: 0 15px;
+    }
+
+    .description{
+      margin-bottom: 20px;
+      /*color: $color-dark !important;*/
+      color: $color-black !important;
+      padding: 0 15px;
+      font-family: $f-light;
+      font-size: 14px;
+    }
+
+    .button{
+      position: absolute;
+      left: 15px;
+      bottom: 15px;
+    }
+
+    &:hover{
+      .prev-pic{
+        &:before{
+          opacity: 0;
+        }
+
+        img{
+          transform: scale(1.1);
+        }
+      }
+    }
+
+  }
+}

@@ -1,0 +1,280 @@
+.comments-wrapper{
+  background-color: $color-light;
+
+  .comments-area{
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+
+    @media(max-width: 992px){
+      padding: 80px 0;
+    }
+
+    @media(max-width: 767px){
+      padding: 70px 0;
+    }
+
+    @media(max-width: 575px){
+      padding: 60px 0;
+    }
+
+    @media(max-width: 440px){
+      padding: 50px 0;
+    }
+  }
+
+  .comments-title{
+    font-family: $f-bold;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .comment-list{
+    width: 80%;
+    margin: 0 auto 40px;
+    padding-left: 0;
+
+    @media(max-width: 575px){
+      width: 100%;
+    }
+  }
+
+  .trackback,
+  .pingback{
+    margin-bottom: 30px;
+    list-style: none;
+
+    .comment-meta{
+      .comment-author{
+        @media(max-width: 575px){
+          margin-bottom: 5px;
+        }
+        a{
+          color: $color-dark !important;
+          transition: all 0.5s;
+
+          &:hover{
+            color: $color-accent !important;
+          }
+        }
+        .says{
+          display: none;
+        }
+      }
+    }
+
+    .comment-metadata{
+      font-size: 12px;
+      margin-bottom: 15px;
+
+      @media(max-width: 575px){
+        width: 100%;
+      }
+
+      time{
+        color: $color-gray !important;
+        margin-right: 15px;
+      }
+
+      .edit-link{
+        a{
+          font-family: $f-med;
+          @include link-style;
+        }
+      }
+    }
+  }
+
+  .comment{
+    margin-bottom: 15px;
+    list-style: none;
+
+    .comment-body{
+      margin-bottom: 20px;
+
+      .comment-meta{
+        display: flex;
+        margin-bottom: 10px;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @media(max-width: 575px){
+          flex-wrap: wrap;
+        }
+
+        .comment-author{
+          display: flex;
+          align-items: center;
+
+          @media(max-width: 575px){
+            margin-bottom: 5px;
+          }
+
+          .avatar{
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+          }
+
+          a{
+            font-family: $f-med;
+            color: $color-dark !important;
+            transition: all 0.5s;
+
+            &:hover{
+              color: $color-accent !important;
+            }
+          }
+
+          .says{
+            display: none;
+          }
+        }
+
+        .comment-metadata{
+          font-size: 12px;
+
+          @media(max-width: 575px){
+            width: 100%;
+          }
+
+          time{
+            color: $color-gray !important;
+          }
+
+          .edit-link{
+            a{
+              font-family: $f-med;
+              @include link-style;
+            }
+          }
+        }
+      }
+
+      .comment-content{
+        padding: 0 30px;
+
+        img{
+          margin: 5px 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6{
+          font-family: $f-bold;
+          margin-bottom: 2rem;
+        }
+
+        p{
+          a{
+            @include link-style;
+          }
+        }
+
+        blockquote{
+          padding: 15px;
+          border-left: 1px solid $color-accent;
+
+          p:last-child{
+            margin-bottom: 0;
+          }
+
+          a{
+            @include link-style;
+          }
+        }
+
+        table{
+          margin-bottom: 30px;
+
+          th,
+          td{
+            border: 1px solid $color-gray;
+            padding: 10px;
+          }
+
+          a{
+            @include link-style;
+          }
+        }
+
+        dd,
+        dt{
+          a{
+            @include link-style;
+          }
+        }
+
+        dt{
+          font-family: $f-med;
+          margin-bottom: 5px;
+        }
+
+        dd{
+          margin-bottom: 10px;
+        }
+
+        ul,
+        ol{
+          padding-left: 20px;
+
+          li{
+            margin-bottom: 5px;
+          }
+        }
+
+        code,
+        pre{
+          padding: 10px;
+          border-radius: 5px;
+          background-color: rgba(57, 62, 70,0.1);
+          display: inline-block;
+          margin-bottom: 10px;
+          color: $color-dark;
+        }
+      }
+    }
+
+    .reply{
+      a {
+        @include btn-style;
+      }
+    }
+  }
+
+  .no-comments{
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 22px;
+    font-family: $f-med;
+  }
+
+  .comment-navigation{
+    margin-bottom: 30px;
+
+    a{
+      @include btn-style;
+    }
+  }
+
+  .comment-respond,
+  .wp-block-post-comments-form{
+    width: 70%;
+    margin: 0 auto;
+
+    @media(max-width: 575px){
+      width: 100%;
+    }
+
+    .comment-reply-title{
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
+
+
+}

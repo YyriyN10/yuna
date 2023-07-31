@@ -1,0 +1,38 @@
+.content-block {
+  background-color: $color-light;
+
+  p{
+    img.alignleft{
+      float: right;
+      margin: 10px 0 10px 10px;
+    }
+
+    img.alignright{
+      float: left;
+      margin: 10px 10px 10px 0;
+    }
+
+    img.aligncenter{
+      margin: 10px auto;
+      display: block;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h3{
+    font-family: $f-bold;
+  }
+
+  ul,
+  ol{
+    padding-left: 20px;
+
+    li{
+      margin-bottom: 5px;
+    }
+  }
+}

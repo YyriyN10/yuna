@@ -1,0 +1,54 @@
+.advantages{
+  /*background-color: $color-gray;*/
+  background-color: rgba(0,0,0,0);
+  position: relative;
+  z-index: 2;
+
+  .advantages-slider{
+    justify-content: center;
+    /*transform: translateY(-50%);*/
+
+    .slide{
+      height: auto;
+
+      .inner{
+        padding: 30px;
+        background-color: $color-red;
+        color: $color-white;
+      }
+
+      .icon-wrapper{
+        margin: 0 auto 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        .svg-pic{
+          width: auto;
+          height: 60px !important;
+          transition: all 0.5s;
+
+          path{
+            fill: $color-white;
+          }
+        }
+      }
+
+      .name{
+        text-align: center;
+        font-size: 20px;
+        font-family: $f-bold;
+        margin-bottom: 0;
+      }
+
+
+      &:hover{
+        .icon-wrapper{
+          svg{
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}

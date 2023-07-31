@@ -1,0 +1,44 @@
+
+.result{
+  background-color: $color-light;
+
+  .block-title{
+    margin-bottom: 60px;
+  }
+
+  .content{
+    align-items: center;
+  }
+
+  .result-list{
+    li{
+      list-style: none;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .icon-wrapper{
+        width: 50px;
+        margin-right: 20px;
+
+        svg{
+          width: 100%;
+          height: auto;
+
+          path{
+            fill: $color-accent;
+          }
+        }
+
+        i{
+          font-size: 50px;
+          color: $color-accent;
+        }
+      }
+
+      .description{
+        width: calc(100% - 70px);
+      }
+    }
+  }
+}

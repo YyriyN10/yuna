@@ -1,0 +1,132 @@
+.services{
+  /*background-color: $color-light;*/
+  background-color: $color-white;
+  padding-bottom: 30px;
+
+  .content{
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service-item{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    width: 33.33%;
+    margin-bottom: 30px;
+    padding: 0 15px;
+
+    /*@media(max-width: 575px){
+      flex-wrap: wrap;
+    }*/
+
+    .inner{
+      height: 100%;
+      border: 1px solid rgba(0,0,0,0.1);
+      position: relative;
+      box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.1);
+    }
+
+    .service-pic{
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      /*width: calc(35% - 15px);
+
+      @media(max-width: 992px){
+        width: calc(45% - 15px);
+      }
+
+      @media(max-width: 575px){
+        width: 100%;
+        margin-bottom: 15px;
+      }*/
+
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-white;
+        opacity: 0.5;
+        z-index: 2;
+        transition: all 0.5s;
+      }
+
+      img{
+        width: 100%;
+        height: auto;
+        transition: all 0.5s;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    .service-text{
+      width: 100%;
+      padding: 30px 30px 100px 30px;
+      /*width: calc(65% - 15px);
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      @media(max-width: 992px){
+        width: calc(55% - 15px);
+      }
+
+      @media(max-width: 575px){
+        width: 100%;
+        padding: 0;
+        margin-bottom: 40px;
+
+      }*/
+
+      .name{
+        margin-bottom: 20px;
+
+        @media(max-width: 992px){
+          margin-bottom: 15px;
+        }
+      }
+
+      .description{
+        font-size: 16px;
+        margin-bottom: 40px;
+
+        @media(max-width: 992px){
+          font-size: 16px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .button{
+      position: absolute;
+      left: 30px;
+      bottom: 30px;
+    }
+
+    &:nth-child(even){
+      flex-direction: row-reverse;
+      display: flex;
+    }
+
+    &:hover{
+      .service-pic{
+        &:before{
+          opacity: 0;
+        }
+
+        img{
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

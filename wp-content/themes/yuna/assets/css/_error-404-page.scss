@@ -1,0 +1,45 @@
+.error-404{
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content{
+    position: relative;
+
+    .bg-image{
+      position: absolute;
+      z-index: 1;
+      width: 50%;
+      height: auto;
+      opacity: 0.2;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      path{
+        fill: $color-gray;
+      }
+    }
+
+    h1{
+      font-family: $f-bold;
+      font-size: 34px;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    p{
+      font-size: 24px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .button{
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
