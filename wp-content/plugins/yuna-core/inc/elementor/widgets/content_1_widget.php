@@ -41,6 +41,7 @@
 				[
 					'label' => esc_html__( 'Content block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -50,6 +51,7 @@
 				[
 					'label' => esc_html__( 'Content block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -59,6 +61,7 @@
 				[
 					'label' => esc_html__( 'Content block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -69,6 +72,7 @@
 				[
 					'label' => esc_html__( 'Content text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::WYSIWYG,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter text', 'yuna' ),
 				]
 			);

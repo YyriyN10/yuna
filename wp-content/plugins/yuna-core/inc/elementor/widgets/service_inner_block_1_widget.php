@@ -41,6 +41,7 @@
 				[
 					'label' => esc_html__( 'Block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -50,6 +51,7 @@
 				[
 					'label' => esc_html__( 'Block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -59,6 +61,7 @@
 				[
 					'label' => esc_html__( 'Block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block title', 'yuna' ),
 				]
 			);
@@ -68,6 +71,7 @@
 				[
 					'label' => esc_html__( 'Choose image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],
@@ -80,6 +84,7 @@
 				[
 					'label' => esc_html__( 'About us description', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::WYSIWYG,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter text', 'yuna' ),
 				]
 			);

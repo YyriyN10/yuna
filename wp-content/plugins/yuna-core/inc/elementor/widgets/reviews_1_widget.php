@@ -8,10 +8,10 @@
 			wp_register_script( 'reviews-slider', plugins_url( '/js/yuna-reviews.js', __FILE__ ), [ 'elementor-frontend' ], '1.0.0', true );
 		}
 
-
 		public function get_script_depends() {
 			return [ 'reviews-slider'];
 		}
+
 
 		public function get_name() {
 			return 'reviews_one';
@@ -52,16 +52,8 @@
 				[
 					'label' => esc_html__( 'About us block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
-				]
-			);
-
-			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'Reviews block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
 
@@ -70,6 +62,7 @@
 				[
 					'label' => esc_html__( 'Reviews block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -79,6 +72,7 @@
 				[
 					'label' => esc_html__( 'Review background image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],
@@ -90,10 +84,34 @@
 				[
 					'label' => esc_html__( 'Default avatar icon', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
+					'label_block' => true,
 					'default' => [
 						'value' => 'fas fa-star',
 						'library' => 'solid',
 					]
+				]
+			);
+
+			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'accent-color',
+				[
+					'label' => esc_html__( 'Accent color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .text-wrapper' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}}  li.slick-active' => 'background-color: {{VALUE}}; border-color: {{VALUE}}',
+
+					],
 				]
 			);
 

@@ -8,6 +8,98 @@ jQuery(function( $ ) {
     $('#loader').fadeOut(400);
   }, 300);
 
+  /**
+   * Main screen animation
+   *
+   * We break the line into symbols and wrap each in a span tag
+   *
+   * @param string
+   * @param target
+   */
+
+
+  function spanSymbolWrapper ( string, target ){//
+
+    let spanString = '';
+
+    for(let i=0; i<string.length; i++ ){
+      spanString = spanString + '<span>'+string[i]+'</span>';
+    }
+
+    target.html(spanString);
+  }
+
+  /**
+   * Main screen animation
+   *
+   * Each character of the line is made visible in turn
+   *
+   * @param targetList
+   * @param delay
+   */
+
+  function addAnimationClass(targetList, delay){
+
+    targetList.each(function (index){
+
+      let thisDelay = index * delay;
+
+      setTimeout(()=>{
+        $(this).addClass('active');
+      }, thisDelay);
+
+    });
+
+  }
+
+  //
+
+  const firstScreenTitleTarget = $('.main-screen h1');
+  const firstScreenTitle = firstScreenTitleTarget.text();
+
+  spanSymbolWrapper(firstScreenTitle, firstScreenTitleTarget);
+
+  const titleSpanList = $('.main-screen h1 span');
+
+  setTimeout(()=>{
+    addAnimationClass(titleSpanList, 100);
+  },400);
+
+
+  //
+
+  const firstScreenSubTitleTarget = $('.main-screen h2');
+  const firstScreenSubTitle = firstScreenSubTitleTarget.text();
+
+  spanSymbolWrapper(firstScreenSubTitle, firstScreenSubTitleTarget);
+
+  const subTitleSpanList = $('.main-screen h2 span');
+
+  setTimeout(()=>{
+    addAnimationClass(subTitleSpanList, 50);
+  }, (titleSpanList.length * 200) + 200);
+
+  //
+
+  const firstScreenCallTextTarget = $('.main-screen p');
+  const firstScreenCallText = firstScreenCallTextTarget.text();
+
+  spanSymbolWrapper(firstScreenCallText, firstScreenCallTextTarget);
+
+  const callTextSpanList = $('.main-screen p span');
+
+  setTimeout(()=>{
+    addAnimationClass(callTextSpanList, 50);
+  }, ((titleSpanList.length * 200) + 200) + ((subTitleSpanList.length *50) + 200));
+
+  //
+
+  setTimeout(function (){
+
+    $('.main-screen .button').addClass('active');
+
+  }, ((titleSpanList.length * 200) + 200) + ((subTitleSpanList.length *50) + 200) + ((callTextSpanList.length * 50) + 200));
+
   //Get Window Width, Height
 
   let windWid = $(window).width();
@@ -279,18 +371,6 @@ jQuery(function( $ ) {
    * Sliders
    */
 
-  //Advantages
-
-  if ( $('.advantages').length ){
-
-    let advantagesBlock = $('.advantages');
-
-    let advantagesH = advantagesBlock.height();
-
-    advantagesBlock.css({'margin-top' : '-'+advantagesH/2+'px'});
-
-  }
-
   //Gallery Slider
 
   $('#gallery-slider-1').slick({
@@ -300,45 +380,6 @@ jQuery(function( $ ) {
     slidesToScroll: 1,
     arrows: false,
   });
-
-  //Advantages slider
-
-  $('#advantages-slider').slick({
-    autoplay: true,
-    autoplaySpeed: 1000,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-  });
-
-  //Reviews slider
-
-  $('#rev-slider').slick({
-    autoplay: false,
-    autoplaySpeed: 5000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    fade: true,
-    adaptiveHeight: true,
-  });
-
-  //Result slider
-
-  if ( $('#result-slider').length ){
-
-    $('#result-slider').slick({
-      autoplay: false,
-      autoplaySpeed: 5000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: false,
-      fade: true,
-    });
-  }
 
   /**
    * Form scripts
@@ -394,15 +435,15 @@ jQuery(function( $ ) {
           }
       }
   }
-  utm_source = getQueryVariable('utm_source') ? getQueryVariable('utm_source') : "";
-  utm_medium = getQueryVariable('utm_medium') ? getQueryVariable('utm_medium') : "";
-  utm_campaign = getQueryVariable('utm_campaign') ? getQueryVariable('utm_campaign') : "";
-  utm_term = getQueryVariable('utm_term') ? getQueryVariable('utm_term') : "";
-  utm_content = getQueryVariable('utm_content') ? getQueryVariable('utm_content') : "";
+  let utm_source = getQueryVariable('utm_source') ? getQueryVariable('utm_source') : "";
+  let utm_medium = getQueryVariable('utm_medium') ? getQueryVariable('utm_medium') : "";
+  let utm_campaign = getQueryVariable('utm_campaign') ? getQueryVariable('utm_campaign') : "";
+  let utm_term = getQueryVariable('utm_term') ? getQueryVariable('utm_term') : "";
+  let utm_content = getQueryVariable('utm_content') ? getQueryVariable('utm_content') : "";
 
   let forms = $('form');
   $.each(forms, function (index, form) {
-      jQueryform = $(form);
+      let jQueryform = $(form);
       jQueryform.append('<input type="hidden" name="utm_source" value="' + utm_source + '">');
       jQueryform.append('<input type="hidden" name="utm_medium" value="' + utm_medium + '">');
       jQueryform.append('<input type="hidden" name="utm_campaign" value="' + utm_campaign + '">');
@@ -444,20 +485,50 @@ jQuery(function( $ ) {
 
     modalContainer.find('.button').text(formContainer.find('.button').text());
 
-
   }
 
   //
 
-  function sum(a, b){
-    let c = a + b;
+  if ( $('.team-slider').length ){
 
-    console.log(c);
+    const teamSliderLength = $('.team-slider .swiper-slide').length;
+
+    const servicesSlider = new Swiper(".team-slider", {
+      effect: "cards",
+      grabCursor: true,
+      initialSlide: Math.round(teamSliderLength/2),
+      pagination: {
+        el: ".team-compact .dot-navigation",
+        clickable: true,
+      },
+    });
+
   }
 
-  sum(4536, 53421);
+  //Footer icon color
 
-  console.dir(sum);
+
+
+
+
+
+  //
+
+  /*const myAsyncFunc = async (url) =>{
+    const res = await fetch(url);
+    const json = await res.json();
+    return json
+  }
+
+  const url = 'https://sinoptik.ua';
+
+  const data = await myAsyncFunc(url);
+
+  console.log(data);*/
+
+  /*myAsyncFunc('https://sinoptik.ua').then(data => console.log(data)).catch(error => console.log(error.message));*/
+
+
 
 
 

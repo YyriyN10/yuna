@@ -47,6 +47,7 @@
 				[
 					'label' => esc_html__( 'About us block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -56,18 +57,10 @@
 				[
 					'label' => esc_html__( 'Choose Background Image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],
-				]
-			);
-
-			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'Contact form block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
 
@@ -76,6 +69,7 @@
 				[
 					'label' => esc_html__( 'Contact form icon', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
+					'label_block' => true,
 					'default' => [
 						'value' => 'fas fa-star',
 						'library' => 'solid',
@@ -88,6 +82,7 @@
 				[
 					'label' => esc_html__( 'Contact form block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -97,6 +92,7 @@
 				[
 					'label' => esc_html__( 'Call to form submit text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter call to action text', 'yuna' ),
 				]
 			);
@@ -107,6 +103,7 @@
 					[
 						'label' => esc_html__( 'Form field name placeholder', 'yuna' ),
 						'type' => \Elementor\Controls_Manager::TEXT,
+						'label_block' => true,
 						'placeholder' => esc_html__( 'Name', 'yuna' ),
 					]
 				);
@@ -118,26 +115,18 @@
 					[
 						'label' => esc_html__( 'Form field e-mail placeholder', 'yuna' ),
 						'type' => \Elementor\Controls_Manager::TEXT,
+						'label_block' => true,
 						'placeholder' => esc_html__( 'E-mail', 'yuna' ),
 					]
 				);
 			}
 
-			/*if ( $inputPhone == 'yes' && $phoneMaskType == 'custom' ){
-				$this->add_control(
-					'phone-placeholder',
-					[
-						'label' => esc_html__( 'Form field phone placeholder', 'yuna' ),
-						'type' => \Elementor\Controls_Manager::TEXT,
-						'placeholder' => esc_html__( 'Telephone', 'yuna' ),
-					]
-				);
-			}*/
 			$this->add_control(
 				'phone-placeholder',
 				[
 					'label' => esc_html__( 'Form field phone placeholder', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Telephone', 'yuna' ),
 				]
 			);
@@ -148,6 +137,7 @@
 					[
 						'label' => esc_html__( 'Form field massage placeholder', 'yuna' ),
 						'type' => \Elementor\Controls_Manager::TEXT,
+						'label_block' => true,
 						'placeholder' => esc_html__( 'Send your massage', 'yuna' ),
 					]
 				);
@@ -158,6 +148,7 @@
 				[
 					'label' => esc_html__( 'Form button submit text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Send', 'yuna' ),
 				]
 			);
@@ -167,6 +158,7 @@
 				[
 					'label' => esc_html__( 'Header with work schedule', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Work schedule', 'yuna' ),
 				]
 			);
@@ -176,6 +168,7 @@
 				[
 					'label' => esc_html__( 'Field signature with schedule from Monday to Friday', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Mon - Fri', 'yuna' ),
 				]
 			);
@@ -185,6 +178,7 @@
 				[
 					'label' => esc_html__( 'Field signature with schedule from saturday', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Sat', 'yuna' ),
 				]
 			);
@@ -194,10 +188,36 @@
 				[
 					'label' => esc_html__( 'Field signature with schedule from sunday', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Sun', 'yuna' ),
 				]
 			);
 
+
+			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'accent-color',
+				[
+					'label' => esc_html__( 'Accent color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .contact-info svg path' => 'fill: {{VALUE}}',
+						'{{WRAPPER}} .inner .work-schedule .working-hovers svg path' => 'fill: {{VALUE}}',
+
+
+					],
+				]
+			);
 
 			$this->end_controls_section();
 

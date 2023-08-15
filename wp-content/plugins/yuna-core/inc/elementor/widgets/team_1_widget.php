@@ -41,6 +41,7 @@
 				[
 					'label' => esc_html__( 'About us block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -50,6 +51,7 @@
 				[
 					'label' => esc_html__( 'Team block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -60,6 +62,7 @@
 				[
 					'label' => esc_html__( 'Team block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -69,8 +72,31 @@
 				[
 					'label' => esc_html__( 'Choose Background Image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
+					],
+				]
+			);
+
+			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'accent-color',
+				[
+					'label' => esc_html__( 'Accent color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}}  li.slick-active' => 'background-color: {{VALUE}}; border-color: {{VALUE}}',
+
 					],
 				]
 			);

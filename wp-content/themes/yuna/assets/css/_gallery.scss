@@ -1,19 +1,8 @@
 .our-gallery{
-  /*background-color: $color-light;*/
   background-color: $color-white;
 
-  .block-name{
-    color: $color-dark;
-
-    i{
-      color: $color-dark;
-    }
-  }
-
   .block-title{
-    /*color: $color-dark;*/
     color: $color-black;
-
   }
 
   .gallery-item{
@@ -24,19 +13,6 @@
       position: relative;
       border: 1px solid rgba(0,0,0,0.1);
       box-shadow: 1px 1px 10px 1px rgba(0,0,0,.1);
-
-      &:before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: $color-white;
-        opacity: 0.5;
-        z-index: 2;
-        transition: all 0.5s;
-      }
 
       img{
         position: absolute;
@@ -54,10 +30,6 @@
 
     &:hover{
       .inner{
-        &:before{
-          opacity: 0;
-        }
-
         img{
           transform: translateX(-50%) translateY(-50%) scale(1.1);
         }

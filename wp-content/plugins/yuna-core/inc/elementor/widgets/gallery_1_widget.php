@@ -42,6 +42,7 @@
 				[
 					'label' => esc_html__( 'About us block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -51,6 +52,7 @@
 				[
 					'label' => esc_html__( 'Gallery block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -60,6 +62,7 @@
 				[
 					'label' => esc_html__( 'Gallery icon', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::ICONS,
+					'label_block' => true,
 					'default' => [
 						'value' => 'fas fa-star',
 						'library' => 'solid',
@@ -72,6 +75,7 @@
 				[
 					'label' => esc_html__( 'Gallery block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -81,6 +85,7 @@
 				[
 					'label' => esc_html__( 'Button more text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Watch more', 'yuna' ),
 				]
 			);
@@ -96,7 +101,6 @@
 						'url' => '',
 						'is_external' => true,
 						'nofollow' => true,
-						// 'custom_attributes' => '',
 					],
 					'label_block' => true,
 				]

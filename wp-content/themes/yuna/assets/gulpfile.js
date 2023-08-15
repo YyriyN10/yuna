@@ -25,6 +25,8 @@ function scripts(){
     'js/jquery.maskedinput.min.js',
     'js/jquery.fancybox.min.js',
     'js/intlTelInput.min.js',
+    'js/swiper.js',
+    'js/typed.js',
     'js/js.js'//завжди останній, важлива послідовність
   ])
     .pipe(concat('main.min.js'))//ім'я згенерованого файлу

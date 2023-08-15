@@ -126,7 +126,7 @@
     &:hover{
       .step-number{
         /*color: $color-light;*/
-        color: $color-black;
+        color: $color-black !important;
       }
 
       .inner{

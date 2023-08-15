@@ -34,6 +34,8 @@
 		require_once( __DIR__ . '/widgets/service_inner_block_1_widget.php' );
 		require_once( __DIR__ . '/widgets/result_1_widget.php' );
 		require_once( __DIR__ . '/widgets/content_1_widget.php' );
+		require_once( __DIR__ . '/widgets/team_2_widget.php' );
+		require_once( __DIR__ . '/widgets/test_widget.php' );
 
 		$widgets_manager->register( new \Elementor_Main_Screen_1_Widget() );
 		$widgets_manager->register( new \Elementor_About_Us_1_Widget() );
@@ -49,6 +51,8 @@
 		$widgets_manager->register( new \Elementor_Service_inner_block_1_Widget());
 		$widgets_manager->register( new \Elementor_Result_1_Widget());
 		$widgets_manager->register( new \Elementor_Content_1_Widget());
+		$widgets_manager->register( new \Elementor_Team_2_Widget());
+		$widgets_manager->register( new \Elementor_Test_Widget());
 
 	}
 

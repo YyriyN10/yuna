@@ -41,6 +41,7 @@
 				[
 					'label' => esc_html__( 'About us block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -50,6 +51,7 @@
 				[
 					'label' => esc_html__( 'Cases block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -59,6 +61,7 @@
 				[
 					'label' => esc_html__( 'Cases block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
@@ -68,6 +71,7 @@
 				[
 					'label' => esc_html__( 'Button go to text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'More detail', 'yuna' ),
 				]
 			);
@@ -77,6 +81,7 @@
 				[
 					'label' => esc_html__( 'Button all text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'All cases', 'yuna' ),
 				]
 			);
@@ -86,6 +91,7 @@
 				[
 					'label' => esc_html__( 'Choose Background Image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],

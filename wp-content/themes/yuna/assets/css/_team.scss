@@ -1,5 +1,4 @@
 .team{
-  /*background-color: $color-dark;*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -9,7 +8,6 @@
 
   &:before{
     content: '';
-    /*background-color: $color-dark;*/
     background-color: $color-white;
     position: absolute;
     top: 0;
@@ -17,7 +15,6 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-    /*opacity: 0.8;*/
     opacity: 0.9;
   }
 
@@ -26,18 +23,7 @@
     z-index: 2;
   }
 
-  .block-name{
-    /*color: $color-light;*/
-    color: $color-black;
-
-    i{
-      /*color: $color-light;*/
-      color: $color-black;
-    }
-  }
-
   .block-title{
-    /*color: $color-light;*/
     color: $color-black;
   }
 
@@ -57,19 +43,6 @@
         position: relative;
         overflow: hidden;
 
-        &:before{
-          content: '';
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          top: 0;
-          background-color: $color-white;
-          opacity: 0.5;
-          transition: all 0.5s;
-          z-index: 2;
-        }
-
         img{
           height: auto;
           width: 100%;
@@ -82,10 +55,8 @@
       .team-men-info{
         transition: all 0.5s;
         text-align: center;
-        /*color: $color-light;*/
         color: $color-black;
         padding: 0 15px 15px 15px;
-
 
         .name{
           margin-bottom: 5px;
@@ -101,12 +72,58 @@
     &:hover{
       .inner{
         .team-pic{
-          &:before{
-            opacity: 0;
-          }
-
           img{
             transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+
+  &.team-compact{
+    padding-bottom: 60px;
+
+    .content{
+      align-items: center;
+    }
+
+    .team-text-wrapper{
+
+      .inner{
+        padding: 30px;
+        background-color: $color-white;
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 1px 1px 10px 1px rgba(0,0,0,.1);
+      }
+      p{
+        margin-bottom: 10px;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .team-slider-wrapper{
+      .dot-navigation{
+        margin: 0 auto;
+        bottom: 0 !important;
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        .swiper-pagination-bullet{
+          width: 10px;
+          height: 10px;
+          border-radius: 2px;
+          border: 2px solid $color-black;
+          transition: all 0.5s;
+          background-color: rgba(0,0,0,0);
+          opacity: 1;
+
+          &.swiper-pagination-bullet-active{
+            border-color: $color-red;
+            background-color: $color-red;
           }
         }
       }

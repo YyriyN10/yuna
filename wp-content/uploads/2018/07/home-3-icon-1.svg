@@ -1,0 +1,13 @@
+<svg width="98" height="106" viewBox="0 0 98 106" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="55" height="71" rx="3.5" transform="translate(42)" fill="white" stroke="#1EE4BD"/>
+<path d="M0.5 4C0.5 2.067 2.067 0.5 4 0.5H52C53.933 0.5 55.5 2.067 55.5 4V6.7H0.5V4Z" transform="translate(42)" fill="white" stroke="#1EE4BD"/>
+<circle cx="1.2" cy="1.2" r="1.2" transform="translate(45.2 2.39999)" fill="#1CEBBC"/>
+<circle cx="1.2" cy="1.2" r="1.2" transform="translate(50 2.39999)" fill="#1CEBBC"/>
+<circle cx="1.2" cy="1.2" r="1.2" transform="translate(54.8 2.39999)" fill="#1CEBBC"/>
+<rect x="0.5" y="0.5" width="69" height="89" rx="3.5" transform="translate(0 16)" fill="white" stroke="#5F45EA"/>
+<rect opacity="0.1" width="68" height="28" transform="translate(1 25)" fill="#5F45EA"/>
+<path d="M0.5 4C0.5 2.067 2.067 0.5 4 0.5H66C67.933 0.5 69.5 2.067 69.5 4V8.5H0.5V4Z" transform="translate(0 16)" fill="white" stroke="#5F45EA"/>
+<circle cx="1.5" cy="1.5" r="1.5" transform="translate(4 19)" fill="#5F45EA"/>
+<circle cx="1.5" cy="1.5" r="1.5" transform="translate(10 19)" fill="#5F45EA"/>
+<circle cx="1.5" cy="1.5" r="1.5" transform="translate(16 19)" fill="#5F45EA"/>
+</svg>

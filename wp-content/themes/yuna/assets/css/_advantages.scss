@@ -1,12 +1,22 @@
 .advantages{
-  /*background-color: $color-gray;*/
   background-color: rgba(0,0,0,0);
   position: relative;
   z-index: 2;
 
   .advantages-slider{
     justify-content: center;
-    /*transform: translateY(-50%);*/
+
+    /*.slick-list{
+      display: flex;
+      justify-content: center;
+    }
+
+    .slick-track{
+      display: flex;
+      justify-content: center;
+      min-width: 100%;
+    }*/
+
 
     .slide{
       height: auto;
@@ -49,6 +59,38 @@
           }
         }
       }
+    }
+
+    .slick-dots{
+      position: relative;
+      bottom: 0;
+      margin-top: 30px;
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @media(max-width: 767px){
+        bottom: -40px;
+      }
+
+      li{
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+        border: 2px solid $color-black;
+        transition: all 0.5s;
+        background-color: rgba(0,0,0,0);
+
+        button{
+          display: none;
+        }
+
+        &.slick-active{
+          border-color: $color-red;
+          background-color: $color-red;
+        }
+      }
+
     }
   }
 }

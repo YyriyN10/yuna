@@ -41,6 +41,7 @@
 				[
 					'label' => esc_html__( 'About us block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
@@ -50,18 +51,10 @@
 				[
 					'label' => esc_html__( 'Choose Background Image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],
-				]
-			);
-
-			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'How we work block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
 
@@ -70,52 +63,82 @@
 				[
 					'label' => esc_html__( 'How we work block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
+				]
+			);
+
+			$repeater = new \Elementor\Repeater();
+
+			$repeater->add_control(
+				'icon',
+				[
+					'label' => esc_html__( 'Icon', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::ICONS,
+					'default' => [
+						'value' => 'fas fa-star',
+						'library' => 'solid',
+					]
+				]
+			);
+
+			$repeater->add_control(
+				'step-name',
+				[
+					'label' => esc_html__( 'Step name', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
+					'placeholder' => esc_html__( 'Step name', 'yuna' ),
+					'default' => esc_html__( 'Step name', 'yuna' ),
+				]
+			);
+
+			$repeater->add_control(
+				'step-description',
+				[
+					'label' => esc_html__( 'Description', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
+					'placeholder' => esc_html__( 'Description', 'yuna' ),
+					'default' => esc_html__( 'Description', 'yuna' ),
 				]
 			);
 
 			$this->add_control(
 				'step-list',
 				[
-					'label' => esc_html__( 'List', 'yuna' ),
+					'label' => __( 'List', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::REPEATER,
-					'fields' => [
-						[
-							'name' => 'icon',
-							'label' => esc_html__( 'Icon', 'yuna' ),
-							'type' => \Elementor\Controls_Manager::ICONS,
-							'default' => [
-								'value' => 'fas fa-star',
-								'library' => 'solid',
-							]
-						],
-						[
-							'name' => 'step-name',
-							'label' => esc_html__( 'Step name', 'yuna' ),
-							'type' => \Elementor\Controls_Manager::TEXT,
-							'placeholder' => esc_html__( 'Step name', 'yuna' ),
-							'default' => esc_html__( 'Step name', 'yuna' ),
-						],
-						[
-							'name' => 'step-description',
-							'label' => esc_html__( 'Description', 'yuna' ),
-							'type' => \Elementor\Controls_Manager::TEXTAREA,
-							'placeholder' => esc_html__( 'Description', 'yuna' ),
-							'default' => esc_html__( 'Description', 'yuna' ),
-						],
-					],
-					'default' => [
-						[
-
-							'icon' => esc_html__( 'List Item #1', 'yuna' ),
-							'step-name' => esc_html__( 'Step name', 'yuna' ),
-							'step-description' => esc_html__( 'Description', 'yuna' ),
-						],
-					],
-					/*'title_field' => '{{{ text }}}',*/
+					'label_block' => true,
+					'fields' => $repeater->get_controls(),
+					'title_field' => 'Step list',
 				]
 			);
 
+
+			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'accent-color',
+				[
+					'label' => esc_html__( 'Accent color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .step-number' => 'border-color: {{VALUE}}; color: {{VALUE}}',
+						'{{WRAPPER}} .icon-wrapper i' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .icon-wrapper svg path' => 'fill: {{VALUE}}',
+
+					],
+				]
+			);
 
 			$this->end_controls_section();
 
@@ -138,7 +161,6 @@
 			?>
 			<section class="how-we-work indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?> style="background-image: url('<?php echo esc_url($settings['image']['url']);?>')">
 				<div class="container">
-					<?php /*require ('parts/block-name.php') ;*/?>
 					<?php require ('parts/block-title-center-full.php') ;?>
           <?php if( $settings['step-list'] ):?>
             <div class="row second-up">

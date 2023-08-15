@@ -1,11 +1,9 @@
 .cases{
-  /*background-color: $color-gray;*/
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-
 
   &:before{
     content: '';
@@ -14,9 +12,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    /*background-color: $color-dark;*/
     background-color: $color-white;
-    /*opacity: 0.7;*/
     opacity: 0.9;
     z-index: 1;
   }
@@ -26,14 +22,8 @@
     z-index: 2;
   }
 
-  .block-name{
-    color: $color-light;
-  }
-
   .block-title{
-    /*color: $color-light;*/
     color: $color-black;
-
   }
 
   .case-item{
@@ -46,7 +36,6 @@
     }
 
     .inner{
-      /*background-color: $color-light;*/
       background-color: $color-white;
       height: 100%;
       position: relative;
@@ -61,19 +50,6 @@
       overflow: hidden;
       position: relative;
 
-      &:before{
-        content: '';
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        position: absolute;
-        background-color: $color-white;
-        opacity: 0.5;
-        transition: all 0.5s;
-        z-index: 2;
-      }
-
       img{
         width: 100%;
         height: auto;
@@ -85,14 +61,12 @@
 
     .name{
       margin-bottom: 15px;
-      /*color: $color-dark !important;*/
       color: $color-black !important;
       padding: 0 15px;
     }
 
     .description{
       margin-bottom: 20px;
-      /*color: $color-dark !important;*/
       color: $color-black !important;
       padding: 0 15px;
       font-family: $f-light;
@@ -107,10 +81,6 @@
 
     &:hover{
       .prev-pic{
-        &:before{
-          opacity: 0;
-        }
-
         img{
           transform: scale(1.1);
         }

@@ -68,6 +68,8 @@
 							     ->set_value_type( 'url' ),
 							Field::make( 'image', 'yuna_default_inner_page_main_pic', __('Background image in the header of internal pages by default') )
 							     ->set_value_type( 'url' ),
+							Field::make( 'color', 'yuna_accent_color', __( 'Accent color' ) )
+									 ->set_help_text(__( 'Choose an accent color for elements that are not edited directly in Elementor' )),
 
 							Field::make( 'radio', 'yuna_tgm_question', __('Add Google Tag Manager?') )
 							     ->set_options( array(

@@ -1,5 +1,9 @@
 <?php
 
+	if ( ! defined( 'ABSPATH' ) ) {
+		exit;
+	}
+
 	class Elementor_FAQ_1_Widget extends \Elementor\Widget_Base {
 
 		/*public function get_script_depends(){
@@ -39,37 +43,57 @@
 			$this->start_controls_section(
 				'content_section',
 				[
-					'label' => esc_html__( 'Content', 'elementor-oembed-widget' ),
+					'label' => esc_html__( 'Content', 'yuna' ),
 					'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 				]
 			);
+
 
 			$this->add_control(
 				'block-id',
 				[
 					'label' => esc_html__( 'FAQ block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
 
-			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'FAQ block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
-				]
-			);
 
 			$this->add_control(
 				'block-title',
 				[
 					'label' => esc_html__( 'FAQ block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
+
+
+			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'bg-color',
+				[
+					'label' => esc_html__( 'Background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .card-header' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+
+// OUR CODE FOR STYLE OPTIONS WILL BE HERE
 
 			$this->end_controls_section();
 
@@ -88,7 +112,7 @@
 			$settings = $this->get_settings_for_display();
 
 			?>
-			<section class="faq indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?>>
+			<section class="faq pe-wrapper-latest-posts indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?> <!--style="background-color: --><?php /*echo $settings['bg-color'];*/?>">
 				<div class="container">
 					<?php /*require ('parts/block-name.php') ;*/?>
 					<?php require ('parts/block-title-center-full.php') ;?>
@@ -109,7 +133,7 @@
 									while ( $faqList->have_posts() ) : $faqList->the_post();
 										?>
 										<div class="card yuna-radius">
-											<div class="card-header">
+											<div class="card-header your-class">
 												<a class="card-link inner-title collapsed" data-toggle="collapse" href="#faq<?php the_ID();?>">
 													<?php the_title();?>
                           <svg width="800px" height="800px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg">

@@ -41,6 +41,7 @@
 				[
 					'label' => esc_html__( 'Choose Background Image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
 					'default' => [
 						'url' => \Elementor\Utils::get_placeholder_image_src(),
 					],
@@ -52,6 +53,7 @@
 				[
 					'label' => esc_html__( 'Main title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter site main title', 'yuna' ),
 				]
 			);
@@ -61,6 +63,7 @@
 				[
 					'label' => esc_html__( 'Main subtitle', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter subtitle', 'yuna' ),
 				]
 			);
@@ -70,6 +73,7 @@
 				[
 					'label' => esc_html__( 'Main text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter text', 'yuna' ),
 				]
 			);
@@ -79,6 +83,7 @@
 				[
 					'label' => esc_html__( 'Button text', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter button text', 'yuna' ),
 				]
 			);
@@ -88,13 +93,31 @@
 				[
 					'label' => esc_html__( 'Button scroll down to block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
 				]
 			);
 
-
-
 			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'btn-bg',
+				[
+					'label' => esc_html__( 'Button background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .bg-color' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
 
 		}
 
@@ -115,10 +138,10 @@
 					<div class="container">
             <div class="row">
               <div class="content col-12 text-center">
-                <h1><?php echo esc_html($settings['title']) ;?></h1>
-                <h2><?php echo esc_html($settings['subtitle']) ;?></h2>
-                <p><?php echo esc_html($settings['text']) ;?></p>
-                <a href="#" data-toggle="modal" data-target="#formModal" class="button">
+                <h1 data-typetext="<?php echo esc_html($settings['title']) ;?>"><?php echo esc_html($settings['title']) ;?></h1>
+                <h2 data-typetext="<?php echo esc_html($settings['subtitle']) ;?>"><?php echo esc_html($settings['subtitle']) ;?></h2>
+                <p data-typetext="<?php echo esc_html($settings['text']) ;?>"><?php echo esc_html($settings['text']) ;?></p>
+                <a href="#" data-toggle="modal" data-target="#formModal" class="button bg-color">
                   <span><?php echo esc_html($settings['btn-text']) ;?></span>
                 </a>
               </div>

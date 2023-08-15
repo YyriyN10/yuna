@@ -5,7 +5,7 @@
 		public function __construct($data = [], $args = null) {
 			parent::__construct($data, $args);
 
-			wp_register_script( 'result-slider', plugins_url( '/js/yuna-result.js', __FILE__ ), [ 'elementor-frontend' ], '1.0.0', true );
+			wp_register_script( 'result-slider', plugins_url( '/js/yuna-result.js', __FILE__ ), [ 'elementor-frontend' ], '1.0.1', true );
 		}
 
 		public function get_script_depends() {
@@ -51,16 +51,8 @@
 				[
 					'label' => esc_html__( 'Block ID', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
-				]
-			);
-
-			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'Block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
 				]
 			);
 
@@ -69,69 +61,71 @@
 				[
 					'label' => esc_html__( 'Block title', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
+					'label_block' => true,
 					'placeholder' => esc_html__( 'Enter block title', 'yuna' ),
 				]
 			);
 
+			$repeaterSlider = new \Elementor\Repeater();
 
-			$this->add_control(
-				'result-list',
+			$repeaterSlider->add_control(
+				'repeater-image',
 				[
-					'label' => esc_html__( 'List', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::REPEATER,
-					'fields' => [
-						[
-							'name' => 'icon',
-							'label' => esc_html__( 'Icon', 'yuna' ),
-							'type' => \Elementor\Controls_Manager::ICONS,
-							'default' => [
-								'value' => 'fas fa-star',
-								'library' => 'solid',
-							]
-						],
-						[
-							'name' => 'result-name',
-							'label' => esc_html__( 'Result text', 'yuna' ),
-							'type' => \Elementor\Controls_Manager::TEXT,
-							'placeholder' => esc_html__( 'Result text', 'yuna' ),
-							'default' => esc_html__( 'SResult text', 'yuna' ),
-						],
-
-					],
+					'label' => esc_html__( 'image', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::MEDIA,
+					'label_block' => true,
+					'frontend_available' => true,
 					'default' => [
-						[
-
-							'icon' => esc_html__( 'List Item #1', 'yuna' ),
-							'result-name' => esc_html__( 'Step name', 'yuna' ),
-						],
-					],
-
+						'url' => \Elementor\Utils::get_placeholder_image_src(),
+					]
 				]
 			);
 
 			$this->add_control(
-				'result-gallery',
+				'slider',
 				[
-					'label' => esc_html__( 'List', 'yuna' ),
+					'label' => __( 'Slider', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::REPEATER,
-					'fields' => [
-						[
-							'name' => 'image',
-							'label' => esc_html__( 'image', 'yuna' ),
-							'type' => \Elementor\Controls_Manager::MEDIA,
-							'default' => [
-								'url' => \Elementor\Utils::get_placeholder_image_src(),
-							]
-						],
+					'label_block' => true,
+					'fields' => $repeaterSlider->get_controls(),
+					'title_field' => 'Image slider',
+				]
+			);
 
-					],
+			$repeaterItems = new \Elementor\Repeater();
+
+			$repeaterItems->add_control(
+				'icon',
+				[
+					'label' => esc_html__( 'Icon', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::ICONS,
+					'label_block' => true,
 					'default' => [
-						[
+						'value' => 'fas fa-star',
+						'library' => 'solid',
+					]
+				]
+			);
 
-							'image' => esc_html__( 'Image', 'yuna' ),
-						],
-					],
+			$repeaterItems->add_control(
+				'result-name',
+				[
+					'label' => esc_html__( 'Result text', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
+					'placeholder' => esc_html__( 'Result text', 'yuna' ),
+					'default' => esc_html__( 'SResult text', 'yuna' ),
+				]
+			);
 
+			$this->add_control(
+				'result-list',
+				[
+					'label' => __( 'List', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::REPEATER,
+					'label_block' => true,
+					'fields' => $repeaterItems->get_controls(),
+					'title_field' => 'Items list',
 				]
 			);
 
@@ -173,15 +167,15 @@
                 <?php endforeach;?>
               </ul>
             <?php endif;?>
-            <?php if( $settings['result-gallery'] ):?>
+						<?php if( $settings['slider'] ):?>
               <div class="result-slider third-up col-lg-7" id="result-slider">
-                <?php foreach( $settings['result-gallery'] as $item ):?>
+								<?php foreach( $settings['slider'] as $item ):?>
                   <div class="slide yuna-radius">
-                    <img src="<?php echo $item['image']['url'];?>" alt="">
+                    <img src="<?php echo $item['repeater-image']['url'];?>" alt="">
                   </div>
-                <?php endforeach;?>
+								<?php endforeach;?>
               </div>
-            <?php endif;?>
+						<?php endif;?>
 					</div>
 				</div>
 			</section>
