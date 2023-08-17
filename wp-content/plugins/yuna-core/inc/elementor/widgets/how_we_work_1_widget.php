@@ -140,6 +140,30 @@
 				]
 			);
 
+			$this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'Step item background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .inner' => 'background-color: {{VALUE}}',
+						'{{WRAPPER}} .step-number' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'before-bg-color',
+				[
+					'label' => esc_html__( 'Before background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .how-we-work:before' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

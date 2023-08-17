@@ -20,10 +20,13 @@
 	$siteAddress = carbon_get_theme_option( 'yuna_address' );
 	$siteMail = carbon_get_theme_option( 'yuna_site_email' );
 	$siteAccentColor = carbon_get_theme_option('yuna_accent_color');
+	$footerBgColor = carbon_get_theme_option('yuna_footer_bg_color');
 
 ?>
 </main>
-	<footer class="site-footer">
+	<footer class="site-footer" <?php if( $footerBgColor != 'rgba(0,0,0,0)' && $footerBgColor != ''):?>
+    style="background-color: <?php echo $footerBgColor;?>"
+	<?php endif;?>>
 		<div class="container">
       <div class="row">
         <div class="content col-12">

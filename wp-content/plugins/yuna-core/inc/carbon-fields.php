@@ -70,6 +70,12 @@
 							     ->set_value_type( 'url' ),
 							Field::make( 'color', 'yuna_accent_color', __( 'Accent color' ) )
 									 ->set_help_text(__( 'Choose an accent color for elements that are not edited directly in Elementor' )),
+							Field::make( 'color', 'yuna_header_bg_color', __( 'Header background color' ) )
+							     ->set_help_text(__( 'Choose header background color' )),
+							Field::make( 'color', 'yuna_footer_bg_color', __( 'Footer background color' ) )
+							     ->set_help_text(__( 'Choose footer background color' )),
+							Field::make( 'color', 'yuna_btn_go_top_bg_color', __( 'Button scroll top background color' ) )
+							     ->set_help_text(__( 'Choose Button scroll top background color' )),
 
 							Field::make( 'radio', 'yuna_tgm_question', __('Add Google Tag Manager?') )
 							     ->set_options( array(

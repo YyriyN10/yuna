@@ -114,6 +114,17 @@
 				]
 			);
 
+			$this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'Advantages background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .advantages' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

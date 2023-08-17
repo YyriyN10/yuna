@@ -119,6 +119,20 @@
 				]
 			);
 
+			$this->add_control(
+				'before-bg-color',
+				[
+					'label' => esc_html__( 'Cases block background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .main-screen:before' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+
+			$this->end_controls_section();
+
 		}
 
 		/**

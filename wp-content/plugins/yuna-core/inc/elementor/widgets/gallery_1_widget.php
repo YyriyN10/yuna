@@ -108,6 +108,38 @@
 
 			$this->end_controls_section();
 
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'bg-color',
+				[
+					'label' => esc_html__( 'Background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .our-gallery' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'btn-bg-color',
+				[
+					'label' => esc_html__( 'Button background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->end_controls_section();
+
 		}
 
 		/**

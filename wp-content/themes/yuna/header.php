@@ -17,6 +17,8 @@
 	$multiLangOption = carbon_get_theme_option( 'yuna_multi_language' );
 	$sitePhone = carbon_get_theme_option( 'yuna_phone_number' );
 	$siteAccentColor = carbon_get_theme_option('yuna_accent_color');
+	$headerBgColor = carbon_get_theme_option('yuna_header_bg_color');
+	$goTopBtnBGColor = carbon_get_theme_option('yuna_btn_go_top_bg_color');
 
 
 
@@ -41,7 +43,9 @@
 <?php wp_body_open(); ?>
 <div class="wrapper" id="top">
   <div class="load" id="loader"></div>
-	<header class="site-header">
+	<header class="site-header" <?php if( $headerBgColor != 'rgba(0,0,0,0)' && $headerBgColor != '' ):?>
+    style="background-color: <?php echo $headerBgColor;?>"
+	<?php endif;?>>
     <div class="container">
       <div class="row">
         <div class="content col-12">
@@ -117,7 +121,9 @@
     </div>
 	</header><!-- #masthead -->
   <main>
-    <a href="#top" class="go-top-btn d-none scroll-to">
+    <a href="#top" class="go-top-btn d-none scroll-to" <?php if( $goTopBtnBGColor != 'rgba(0,0,0,0)' && $goTopBtnBGColor != '' ):?>
+      style="background-color: <?php echo $goTopBtnBGColor;?>"
+    <?php endif;?>>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 122.88 66.91" xml:space="preserve"><g><path fill="<?php echo $siteAccentColor;?>" d="M11.68,64.96c-2.72,2.65-7.08,2.59-9.73-0.14c-2.65-2.72-2.59-7.08,0.13-9.73L56.87,1.97l4.8,4.93l-4.81-4.95 c2.74-2.65,7.1-2.58,9.76,0.15c0.08,0.08,0.15,0.16,0.23,0.24L120.8,55.1c2.72,2.65,2.78,7.01,0.13,9.73 c-2.65,2.72-7,2.78-9.73,0.14L61.65,16.5L11.68,64.96L11.68,64.96z"/></g>
 </svg>
     </a>

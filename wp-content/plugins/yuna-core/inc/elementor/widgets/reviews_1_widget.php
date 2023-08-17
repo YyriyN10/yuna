@@ -115,6 +115,17 @@
 				]
 			);
 
+			$this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'Reviews block background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .reviews' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

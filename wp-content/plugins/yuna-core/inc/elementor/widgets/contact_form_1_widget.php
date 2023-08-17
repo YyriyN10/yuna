@@ -219,6 +219,40 @@
 				]
 			);
 
+			$this->add_control(
+				'card-bg-color',
+				[
+					'label' => esc_html__( 'Contact card background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .contact-info .inner' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'form-input-bg-color',
+				[
+					'label' => esc_html__( 'Form input background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .form-group .form-control' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'before-bg-color',
+				[
+					'label' => esc_html__( 'Before background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .contact-form:before' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

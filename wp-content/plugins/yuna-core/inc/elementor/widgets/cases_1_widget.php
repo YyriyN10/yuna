@@ -117,6 +117,50 @@
 
 			$this->end_controls_section();
 
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'item-bg-color',
+				[
+					'label' => esc_html__( 'Case item background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .inner' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'btn-bg-color',
+				[
+					'label' => esc_html__( 'Button background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'before-bg-color',
+				[
+					'label' => esc_html__( 'Before background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .cases:before' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->end_controls_section();
+
 		}
 
 		/**
@@ -134,7 +178,6 @@
 			?>
 			<section class="cases indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?> style="background-image: url('<?php echo esc_url($settings['image']['url']);?>')">
 				<div class="container">
-					<?php /*require ('parts/block-name.php') ;*/?>
 					<?php require ('parts/block-title-center-full.php') ;?>
 					<div class="row second-up">
 						<?php

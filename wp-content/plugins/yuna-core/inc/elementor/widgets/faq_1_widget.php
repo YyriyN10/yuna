@@ -92,8 +92,27 @@
 				]
 			);
 
+      $this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'F.A.Q. block background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .faq' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
 
-// OUR CODE FOR STYLE OPTIONS WILL BE HERE
+      $this->add_control(
+				'text-bg-color',
+				[
+					'label' => esc_html__( 'Answer background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .card-body' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
 
 			$this->end_controls_section();
 

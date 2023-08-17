@@ -105,6 +105,39 @@
 
 			$this->end_controls_section();
 
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'About block background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .about-us' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'before-bg-color',
+				[
+					'label' => esc_html__( 'Before image background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .inner-pic:before' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->end_controls_section();
+
 		}
 
 		/**

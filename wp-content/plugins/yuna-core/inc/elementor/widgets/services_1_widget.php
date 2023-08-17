@@ -78,6 +78,74 @@
 
 			$this->end_controls_section();
 
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'Cases block background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .services' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'btn-bg-color',
+				[
+					'label' => esc_html__( 'Button background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'accent-color',
+				[
+					'label' => esc_html__( 'Accent color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .dot-navigation .swiper-pagination-bullet.swiper-pagination-bullet-active' => 'background-color: {{VALUE}}; border-color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->add_control(
+				'card-title-bg-color',
+				[
+					'label' => esc_html__( 'Service cart title background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .service-item .service-pic .name' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->add_control(
+				'card-hover-bg-color',
+				[
+					'label' => esc_html__( 'Service cart hover background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .service-item .service-text' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->end_controls_section();
+
 		}
 
 		/**
@@ -141,40 +209,6 @@
               </div>
             </div>
             <div class="dot-navigation"></div>
-            <!--<div class="content col-xl-10 offset-xl-1">
-	            <?php
-/*		            $servicesArgs = array(
-			            'posts_per_page' => -1,
-			            'orderby' 	 => 'date',
-			            'post_type'  => 'yuna_services',
-			            'post_status'    => 'publish'
-		            );
-
-		            $servicesList = new WP_Query( $servicesArgs );
-
-		            if ( $servicesList->have_posts() ) :
-
-			            while ( $servicesList->have_posts() ) : $servicesList->the_post();
-				            $shortDescription = carbon_get_post_meta(  get_the_ID(), 'yuna_service_description' );
-				            $btnText = carbon_get_post_meta(  get_the_ID(), 'yuna_service_more_btn_text' );
-				            */?>
-
-                    <div class="service-item">
-                      <div class="inner yuna-radius">
-                        <div class="service-pic second-up">
-							            <?php /*the_post_thumbnail();*/?>
-                        </div>
-                        <div class="service-text third-up">
-                          <h3 class="name subtitle"><?php /*the_title();*/?></h3>
-                          <p class="description"><?php /*echo $shortDescription;*/?></p>
-                        </div>
-                        <a href="<?php /*the_permalink();*/?>" class="button"><?php /*echo $btnText;*/?></a>
-                      </div>
-                    </div>
-			            <?php /*endwhile;*/?>
-		            <?php /*endif; */?>
-	            <?php /*wp_reset_postdata(); */?>
-            </div>-->
           </div>
 				</div>
 			</section>

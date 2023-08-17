@@ -12,7 +12,7 @@
 
         let advantagesH = advantagesBlock.find('.slide').innerHeight();
 
-        advantagesBlock.css({'margin-top' : '-'+advantagesH/2+'px'});
+        $('.advantages .advantages-slider').css({'transform' : 'translateY(-'+advantagesH/2+'px)'});
 
       }
 

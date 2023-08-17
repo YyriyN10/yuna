@@ -110,6 +110,40 @@
 				]
 			);
 
+			$this->add_control(
+				'block-bg-color',
+				[
+					'label' => esc_html__( 'Text block background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .team-text-wrapper .inner' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'card-bg-color',
+				[
+					'label' => esc_html__( 'Team men card background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .team-men .inner' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'before-bg-color',
+				[
+					'label' => esc_html__( 'Before background color ', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .team:before' => 'background-color: {{VALUE}}',
+
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}
@@ -132,7 +166,7 @@
 					<?php require ('parts/block-title-center-full.php') ;?>
 					<div class="row content second-up">
             <div class="team-text-wrapper col-lg-7">
-              <div class="inner bg-color yuna-radius">
+              <div class="inner yuna-radius">
 	              <?php echo $settings['block-text'];?>
               </div>
             </div>
