@@ -67,31 +67,6 @@
 				]
 			);
 
-			$this->add_control(
-				'review-bg-icon',
-				[
-					'label' => esc_html__( 'Review background image', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::MEDIA,
-					'label_block' => true,
-					'default' => [
-						'url' => \Elementor\Utils::get_placeholder_image_src(),
-					],
-				]
-			);
-
-			$this->add_control(
-				'avatar-icon',
-				[
-					'label' => esc_html__( 'Default avatar icon', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::ICONS,
-					'label_block' => true,
-					'default' => [
-						'value' => 'fas fa-star',
-						'library' => 'solid',
-					]
-				]
-			);
-
 			$this->end_controls_section();
 
 			$this->start_controls_section(
@@ -126,6 +101,72 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'text-color',
+				[
+					'label' => esc_html__( 'Review text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .text-content' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'name-text-color',
+				[
+					'label' => esc_html__( 'Review name, text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'post-text-color',
+				[
+					'label' => esc_html__( 'Review additional characteristic text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .car-name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'quotes-color',
+				[
+					'label' => esc_html__( 'Quotes color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .quotes path' => 'fill: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'line-color',
+				[
+					'label' => esc_html__( 'Separator color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .rev-slider .slide .text-wrapper .info-text' => 'border-color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}
@@ -145,7 +186,6 @@
 			?>
 			<section class="reviews indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?>>
 				<div class="container">
-					<?php /*require ('parts/block-name.php') ;*/?>
 					<?php require ('parts/block-title-center-full.php') ;?>
           <div class="row second-up">
             <div class="rev-slider col-lg-8 offset-lg-2 col-sm-10 offset-sm-1 col-12 offset-0" id="rev-slider">
@@ -184,32 +224,6 @@
 	                        <?php endif;?>
                         </div>
                       </div>
-	                    <?php /*if($settings['review-bg-icon']):*/?><!--
-                        <img class="background-pic" src="<?php /*echo $settings['review-bg-icon']['url'];*/?>" alt="">
-                      <?php /*endif;*/?>
-                      <div class="client">
-                        <div class="rev-pic yuna-radius">
-		                      <?php /*$revPic = get_the_post_thumbnail_url(); if( $revPic ):*/?>
-			                      <?php /*the_post_thumbnail();*/?>
-		                      <?php /*else:*/?>
-			                      <?php
-/*			                      if ( $settings['avatar-icon']) {
-				                      \Elementor\Icons_Manager::render_icon( $settings['avatar-icon'], [ 'aria-hidden' => 'true' ] );
-			                      }
-			                      */?>
-		                      <?php /*endif;*/?>
-                        </div>
-                        <div class="info yuna-radius">
-                          <h3 class="name inner-title"><?php /*esc_html(the_title());*/?></h3>
-	                        <?php /*if( $carName ):*/?>
-                            <p class="car-name"><?php /*echo esc_html($carName);*/?></p>
-	                        <?php /*endif;*/?>
-                        </div>
-                      </div>
-
-                      <div class="rev-text yuna-radius">
-	                      <?php /*echo the_content();*/?>
-                      </div>-->
                     </div>
 			            <?php endwhile;?>
 		            <?php endif; ?>

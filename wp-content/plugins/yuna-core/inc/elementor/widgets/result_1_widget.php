@@ -130,6 +130,63 @@
 			);
 
 			$this->end_controls_section();
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'background-color',
+				[
+					'label' => esc_html__( 'Background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .result' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'contacts-text-color',
+				[
+					'label' => esc_html__( 'Result name text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .description' => 'color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->add_control(
+				'icon-color',
+				[
+					'label' => esc_html__( 'Icon color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .result-list li .icon-wrapper svg path' => 'fill: {{VALUE}}',
+						'{{WRAPPER}} .result-list li .icon-wrapper i' => 'color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->end_controls_section();
 
 		}
 
@@ -148,7 +205,6 @@
 			?>
 			<section class="result indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?>>
 				<div class="container">
-					<?php require ('parts/block-name.php') ;?>
 					<?php require ('parts/block-title-center-full.php') ;?>
 					<div class="row content">
             <?php if( $settings['result-list'] ):?>

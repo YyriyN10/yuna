@@ -1,0 +1,98 @@
+/*--- IMPORT ---*/
+
+@import "fonts";
+@import "variables";
+@import "basic";
+@import "popup";
+@import "slick";
+@import "slick-teame";
+@import "bootstrap.css";
+
+
+/*--- HEADER ---*/
+
+
+.indent{
+  margin-bottom: 30px;
+
+  blockquote{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #404040;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  img{
+    width: 100%;
+    height: auto;
+    margin: 15px;
+  }
+
+  .left-pic{
+    width: 400px;
+    height: auto;
+  }
+
+  .block-title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    svg{
+      width: 50px;
+      height: auto;
+      margin-right: 20px;
+
+      path{
+        fill: #404040;
+      }
+    }
+
+    span{
+      width: calc(100% - 70px);
+      font-size: 48px;
+      font-weight: 700;
+    }
+  }
+
+  h3{
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  ul{
+    padding-left: 20px;
+    margin: 0 0 20px 0;
+
+    li{
+      margin-bottom: 15px;
+    }
+  }
+
+  .d-flex{
+    align-items: flex-start;
+  }
+
+  .mini-block{
+    list-style: none;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+
+    b{
+      font-size: 20px;
+    }
+    span{
+      font-size: 18px;
+    }
+  }
+}
+
+
+
+
+

@@ -164,6 +164,39 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'step-name-color',
+				[
+					'label' => esc_html__( 'Step name text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'step-description-color',
+				[
+					'label' => esc_html__( 'Step description text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .description' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

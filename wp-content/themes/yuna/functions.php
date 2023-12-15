@@ -183,15 +183,39 @@ require get_template_directory() . '/inc/template-functions.php';
 
 	}
 
+/***
+ * Ajax Functions
+ */
+
+require get_template_directory() . '/inc/ajax-functions.php';
+
+	/*$request = new WP_REST_Request( 'GET', '/wp/v2/posts' );
+
+	$request->set_param( 'per_page', 20 );
+	$responseApi = rest_do_request( $request );*/
 
 
 
 
+	/*add_action( 'after_setup_theme', 'truemisha_color_palette' );
 
-
-
-
-
+	function truemisha_color_palette(){
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => 'Сероватый',
+					'slug'  => 'grey',
+					'color'	=> '#F3F1F5',
+				),
+				array(
+					'name'  => 'Пастельно-фиолетовый',
+					'slug'  => 'purple',
+					'color' => '#BFA2DB',
+				),
+			)
+		);
+	}*/
 
 
 

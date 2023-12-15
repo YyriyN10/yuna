@@ -48,29 +48,6 @@
 			);
 
 			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'Gallery block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'label_block' => true,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
-				]
-			);
-
-			$this->add_control(
-				'block-icon',
-				[
-					'label' => esc_html__( 'Gallery icon', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::ICONS,
-					'label_block' => true,
-					'default' => [
-						'value' => 'fas fa-star',
-						'library' => 'solid',
-					]
-				]
-			);
-
-			$this->add_control(
 				'block-title',
 				[
 					'label' => esc_html__( 'Gallery block title', 'yuna' ),
@@ -138,6 +115,29 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'button-text-color',
+				[
+					'label' => esc_html__( 'Button text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .button:hover' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}
@@ -157,9 +157,8 @@
 			?>
 			<section class="our-gallery indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?>>
 				<div class="container-fluid">
-					<?php /*require ('parts/block-name.php') ;*/?>
 					<?php require ('parts/block-title-center-full.php') ;?>
-          <div class="row second-up">
+          <div class="row second-up" id="gallery-list">
 	          <?php
 		          $galleryArgs = array(
 			          'posts_per_page' => 8,
@@ -193,10 +192,10 @@
 		          <?php endif; ?>
 	          <?php wp_reset_postdata(); ?>
           </div>
-          <?php if( $allGalleryCount > 6 ):?>
+          <?php if( $allGalleryCount > 8 ):?>
             <div class="row">
               <div class="col-12 text-center">
-                <a href="<?php echo $settings['more-btn-url']['url'];?>" class="button"><?php echo $settings['more-btn-text'];?></a>
+                <a href="<?php echo $settings['more-btn-url']['url'];?>" class="button" id="gallery-more"><?php echo $settings['more-btn-text'];?></a>
               </div>
             </div>
           <?php endif;?>

@@ -1,0 +1,14 @@
+2023-11-24T09:46:08+00:00 CRITICAL Cannot redeclare wp_specialchars_decode() (previously declared in /var/www/html/wp-study.loc/wp-includes/formatting.php:1020) in /var/www/html/wp-study.loc/wp-content/themes/brew/inc/delivery.php on line 40
+
+2023-11-24T09:46:12+00:00 CRITICAL Cannot redeclare wp_specialchars_decode() (previously declared in /var/www/html/wp-study.loc/wp-includes/formatting.php:1020) in /var/www/html/wp-study.loc/wp-content/themes/brew/inc/delivery.php on line 40
+
+2023-11-24T11:49:12+00:00 CRITICAL require(): Failed opening required '/var/www/html/wp-study.loc/wp-content/themes/brew/inc/vendor/autoload.php' (include_path='.:/usr/share/php') in /var/www/html/wp-study.loc/wp-content/themes/brew/inc/delivery.php on line 3
+
+2023-11-24T11:49:13+00:00 CRITICAL require(): Failed opening required '/var/www/html/wp-study.loc/wp-content/themes/brew/inc/vendor/autoload.php' (include_path='.:/usr/share/php') in /var/www/html/wp-study.loc/wp-content/themes/brew/inc/delivery.php on line 3
+
+2023-11-24T11:49:34+00:00 CRITICAL require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/share/php') in /var/www/html/wp-study.loc/wp-content/themes/brew/inc/delivery.php on line 3
+
+2023-11-24T11:49:35+00:00 CRITICAL require(): Failed opening required '/vendor/autoload.php' (include_path='.:/usr/share/php') in /var/www/html/wp-study.loc/wp-content/themes/brew/inc/delivery.php on line 3
+
+2023-11-24T13:49:55+00:00 CRITICAL Allowed memory size of 134217728 bytes exhausted (tried to allocate 73416704 bytes) in /var/www/html/wp-study.loc/wp-content/themes/brew/vendor/lis-dev/nova-poshta-api-2/src/Delivery/NovaPoshtaApi2.php on line 262
+

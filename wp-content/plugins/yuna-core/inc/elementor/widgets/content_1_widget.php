@@ -46,15 +46,6 @@
 				]
 			);
 
-			$this->add_control(
-				'block-name',
-				[
-					'label' => esc_html__( 'Content block name', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'label_block' => true,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
-				]
-			);
 
 			$this->add_control(
 				'block-title',
@@ -62,7 +53,7 @@
 					'label' => esc_html__( 'Content block name', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::TEXTAREA,
 					'label_block' => true,
-					'placeholder' => esc_html__( 'Enter block name', 'yuna' ),
+					'placeholder' => esc_html__( 'Enter block title', 'yuna' ),
 				]
 			);
 
@@ -77,6 +68,51 @@
 				]
 			);
 
+
+			$this->end_controls_section();
+
+			$this->start_controls_section(
+				'section_style',
+				[
+					'label' => esc_html__( 'Style', 'yuna' ),
+					'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				]
+			);
+
+			$this->add_control(
+				'background-color',
+				[
+					'label' => esc_html__( 'Background color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .content-block' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'contacts-text-color',
+				[
+					'label' => esc_html__( 'Contacts info text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .content-block' => 'color: {{VALUE}}',
+
+					],
+				]
+			);
 
 			$this->end_controls_section();
 
@@ -97,7 +133,6 @@
 			?>
 			<section class="content-block indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?>>
 				<div class="container">
-					<?php require ('parts/block-name.php') ;?>
 					<?php require ('parts/block-title-center-full.php') ;?>
 					<div class="row">
 						<div class="third-up col-12">

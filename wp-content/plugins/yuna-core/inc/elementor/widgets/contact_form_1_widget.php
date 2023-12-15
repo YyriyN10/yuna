@@ -65,19 +65,6 @@
 			);
 
 			$this->add_control(
-				'block-icon',
-				[
-					'label' => esc_html__( 'Contact form icon', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::ICONS,
-					'label_block' => true,
-					'default' => [
-						'value' => 'fas fa-star',
-						'library' => 'solid',
-					]
-				]
-			);
-
-			$this->add_control(
 				'block-title',
 				[
 					'label' => esc_html__( 'Contact form block title', 'yuna' ),
@@ -253,6 +240,79 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'contacts-text-color',
+				[
+					'label' => esc_html__( 'Contacts info text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .contact-info .inner p' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .contact-info .inner a' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .contact-info .working-hovers' => 'color: {{VALUE}}',
+
+					],
+				]
+			);
+
+			$this->add_control(
+				'form-title-color',
+				[
+					'label' => esc_html__( 'Form title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .cal-to-action' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'form-btn-text-color',
+				[
+					'label' => esc_html__( 'Form button text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .button:hover' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'form-input-placeholder-color',
+				[
+					'label' => esc_html__( 'Placeholder color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} form .form-group .form-control::-webkit-input-placeholder' => 'color: {{VALUE}}',
+						'{{WRAPPER}} form .form-group .form-control:-moz-placeholder' => 'color: {{VALUE}}',
+						'{{WRAPPER}} form .form-group .form-control::-moz-placeholder' => 'color: {{VALUE}}',
+						'{{WRAPPER}} form .form-group .form-control:-ms-input-placeholder' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'form-input-focus-color',
+				[
+					'label' => esc_html__( 'Input focus border color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} form .form-group .form-control:focus' => 'border-color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}
@@ -299,7 +359,6 @@
 			<section class="contact-form indent animate-target" <?php if($settings['block-id']):?> id="<?php echo $settings['block-id'];?>" <?php endif;?>style="background-image: url('<?php echo esc_url($settings['image']['url']);?>')">
 
 				<div class="container">
-					<?php /*require ('parts/block-name.php') ;*/?>
 					<?php require ('parts/block-title-center-full.php') ;?>
           <div class="row content">
             <div class="contact-info col-lg-5 col-md-6 second-up">
@@ -351,9 +410,8 @@
 	                  <?php endif;?>
                   </div>
                 <?php endif;?>
-
               </div>
-	            <?php /*require ('parts/social.php');*/?>
+              <?php include ('parts/social.php');?>
             </div>
             <div class="form-wrapper offset-lg-2 col-lg-5 col-md-6 offset-md-0 third-up">
               <h3 class="cal-to-action subtitle"><?php echo esc_html($settings['form-call-to-action']);?></h3>

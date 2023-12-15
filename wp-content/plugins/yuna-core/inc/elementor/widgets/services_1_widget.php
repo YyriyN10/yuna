@@ -144,6 +144,72 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'block-text-color',
+				[
+					'label' => esc_html__( 'Block text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-text' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'service-prev-title-color',
+				[
+					'label' => esc_html__( 'The color of the service name in the preview', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .service-pic .name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'service-hover-title-color',
+				[
+					'label' => esc_html__( 'The color of the service name when hovering', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .service-text .name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'service-hover-text-color',
+				[
+					'label' => esc_html__( 'The color of the brief description of the service when hovering', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .service-text .description' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'service-btn-text-color',
+				[
+					'label' => esc_html__( 'Button text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}
@@ -200,7 +266,10 @@
                             <h3 class="name subtitle"><?php the_title();?></h3>
                             <p class="description"><?php echo $shortDescription;?></p>
                           </div>
-                          <a href="<?php the_permalink();?>" class="button"><?php echo $btnText;?></a>
+                          <?php if( $btnText ):?>
+                            <a href="<?php the_permalink();?>" class="button"><?php echo $btnText;?></a>
+                          <?php endif;?>
+
                         </div>
                       </div>
 			              <?php endwhile;?>

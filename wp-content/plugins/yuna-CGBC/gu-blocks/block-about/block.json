@@ -1,0 +1,27 @@
+{
+  "apiVersion": 3,
+  "title": "Yuna About",
+  "name": "yuna-cgbc/about",
+  "category": "yuna-custom-category",
+  "icon": "universal-access-alt",
+  "editorScript": "file:./block.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./styles.css",
+  "supports": {
+    "color": {
+      "text": true,
+      "background": true,
+      "link": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true
+    },
+    "align": true,
+    "spacing": {
+      " margin": true,
+      "padding": true,
+      "blockGap": true
+    }
+  }
+}

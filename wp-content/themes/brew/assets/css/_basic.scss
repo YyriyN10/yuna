@@ -1,0 +1,526 @@
+/*--- Basic styles ---*/
+html{ overflow-y: scroll !important; }
+
+body{
+  font-family: $f-main;
+  color: #2c2e29;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-right: 0 !important;
+
+  .modal.show {
+    display: flex !important;
+    height: 100%;
+  }
+}
+
+.wrapper{
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+*{
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+a{
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited{
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.page{
+  margin: 0;
+  padding: 0;
+}
+
+.fixedPosition {
+  overflow: hidden !important;
+}
+
+.fixed{
+  transform: translateY(-150%);
+}
+
+.fixed-vis{
+  transform: translateY(0);
+}
+
+/*--- menu button ---*/
+
+.menu-btn{
+  display: none;
+
+  span{
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: $color-soft-brown;
+    display: block;
+    transition: all 0.5s;
+    transform-origin: center;
+    border-radius: 2px;
+
+    &:nth-child(1){
+      width: 75%;
+    }
+
+    &:nth-child(2){
+      width: 50%;
+    }
+    &:nth-child(3){
+      width: 100%;
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  &.active{
+    span{
+      background-color: $color-white;
+
+      &:nth-child(1){
+        width: 25%;
+      }
+      &:nth-child(2){
+        width: 100%;
+      }
+      &:nth-child(3){
+        width: 50%;
+      }
+    }
+  }
+}
+
+/*--- button ---*/
+
+.button{
+  display: inline-block;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.04);
+  padding: 12px 18px;
+  text-align: center;
+  font-size: 15px;
+  font-family: $f-I-S-bold;
+  line-height: 1.5;
+
+  @media(max-width: 390px){
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+
+  &.white{
+    border: 1px solid $color-crema;
+    background: $color-white;
+    color: $color-gray !important;
+  }
+
+  &.brown{
+    background-color: $color-soft-brown;
+    color: $color-white !important;
+  }
+
+  &:hover{
+
+  }
+}
+
+/*--- indents ---*/
+
+.indent-top-big{
+  padding-top: 80px;
+
+  @media(max-width: 1200px){
+    padding-top: 70px;
+  }
+
+  @media(max-width: 767px){
+    padding-top: 60px;
+  }
+
+  @media(max-width: 440px){
+    padding-top: 50px;
+  }
+
+}
+
+.indent-top-small{
+  padding-top: 60px;
+
+  @media(max-width: 1200px){
+    padding-top: 50px;
+  }
+
+  @media(max-width: 767px){
+    padding-top: 40px;
+  }
+
+  @media(max-width: 440px){
+    padding-top: 30px;
+  }
+
+}
+
+.indent-bottom-big{
+  padding-bottom: 80px;
+
+  @media(max-width: 1200px){
+    padding-bottom: 70px;
+  }
+
+  @media(max-width: 767px){
+    padding-bottom: 60px;
+  }
+
+  @media(max-width: 440px){
+    padding-bottom: 50px;
+  }
+
+}
+
+.indent-bottom-small{
+  padding-bottom: 60px;
+
+  @media(max-width: 1200px){
+    padding-bottom: 50px;
+  }
+
+  @media(max-width: 767px){
+    padding-bottom: 40px;
+  }
+
+  @media(max-width: 440px){
+    padding-bottom: 30px;
+  }
+
+}
+
+/*--- block-title ---*/
+
+.block-title {
+  text-transform: uppercase;
+  font-family: $f-BN-reg;
+  line-height: 1.2;
+
+  &.white-title{
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+
+    @media(max-width: 992px){
+      font-size: 46px;
+      margin-bottom: 45px;
+    }
+
+    @media(max-width: 767px){
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 36px;
+      margin-bottom: 35px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 32px;
+      margin-bottom: 30px;
+    }
+
+    &:before,
+    &:after{
+      content: '';
+      height: 1px;
+      width: 88px;
+      background-color: $color-white;
+      margin: 0 39px;
+
+      @media(max-width: 767px){
+        width: 50px;
+        margin: 0 30px;
+      }
+      
+      @media(max-width: 575px){
+        margin: 0 15px;
+      }
+
+      @media(max-width: 375px){
+        width: 30px;
+      }
+    }
+  }
+  
+  &.brown-title{
+    color: $color-soft-brown;
+    font-size: 40px;
+    margin-bottom: 35px;
+
+    @media(max-width: 992px){
+      font-size: 38px;
+      margin-bottom: 30px;
+    }
+
+    @media(max-width: 767px){
+      font-size: 36px;
+      margin-bottom: 25px;
+    }
+
+    @media(max-width: 575px){
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    @media(max-width: 440px){
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.order-subtitle{
+  text-transform: uppercase;
+  font-size: 26px;
+  color: $color-soft-brown;
+  font-family: $f-BN-reg;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/*--- slick-dots ---*/
+
+.slick-dots{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  li{
+    height: 3px;
+    width: 50px;
+    border-radius: 30px;
+    background-color: $color-crema;
+    transition: all 0.5s;
+
+    @media(max-width: 767px){
+      width: 40px;
+    }
+
+    @media(max-width: 575px){
+      width: 30px;
+    }
+
+    @media(max-width: 440px){
+      width: 20px;
+    }
+
+    button{
+      display: none;
+    }
+
+    &.slick-active{
+      background-color: $color-soft-brown;
+    }
+  }
+}
+
+/*--- form ---*/
+
+form{
+  .form-group{
+    margin-bottom: 24px;
+    height: 46px;
+
+    .form-control{
+      width: 100%;
+      height: 100%;
+      box-shadow: none;
+      transition: all 0.5s;
+      border: 1px solid $color-crema;
+      color: $color-white;
+      border-radius: 6px;
+      background-color: rgba(30,30,30, 0.3);
+      padding-left: 16px;
+
+      ::-webkit-input-placeholder {
+        color: $color-gray;
+      }
+      :-moz-placeholder {
+        color: $color-gray;
+      }
+      ::-moz-placeholder {
+        color: $color-gray;
+      }
+      :-ms-input-placeholder {
+        color: $color-gray;
+      }
+    }
+  }
+}
+
+
+/*--- backgroud image ---*/
+
+@mixin bg-img{
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+/*--- modal reset ---*/
+
+.modal{
+  .modal-dialog{
+    margin: auto;
+    width: 70%;
+    max-width: 70%;
+    margin-top: 100px;
+    position: relative;
+
+    @media(max-width: 1200px){
+      width: 90%;
+      max-width: 90%;
+    }
+
+    @media(max-width: 767px){
+      width: calc(100% - 30px);
+      max-width: 100%;
+    }
+
+    .modal-content{
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      padding: 40px;
+      border-radius: 15px;
+      color: $color-white;
+      background-color: $color-black;
+
+      @media(max-width: 575px){
+        padding: 30px 15px;
+      }
+
+      .modal-header{
+        padding: 0;
+        border: none;
+        position: relative;
+        display: block;
+
+        .modal-title{
+          width: 100%;
+          display: block;
+        }
+
+        .close{
+          position: absolute;
+          padding: 0;
+          margin: 0;
+          width: 20px;
+          height: 20px;
+          top: -20px;
+          right: -20px;
+          border: none;
+          background-color: rgba(0,0,0,0);
+          z-index: 2;
+          opacity: 1;
+          outline: none !important;
+
+          @media(max-width: 767px){
+            right: 0;
+          }
+
+          svg{
+            width: 100%;
+            height: auto;
+
+            path{
+              fill: $color-white;
+            }
+          }
+        }
+      }
+
+      .modal-body{
+        padding: 0;
+        border: none;
+      }
+    }
+  }
+}
+
+/*--------- ANIMATION ------------*/
+
+
+.menu-slider{
+  -webkit-animation: slide-menu 1s infinite ease-in-out;
+  animation: slide-menu 1s infinite ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+@-webkit-keyframes slide-menu {
+  0% {
+    right: -200px;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-menu {
+  0% {
+    right: -200px;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+.menu-slider-out{
+  -webkit-animation: slide-menu-out 1s infinite ease-in-out;
+  animation: slide-menu-out 1s infinite ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+@-webkit-keyframes slide-menu-out {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -200px;
+  }
+}
+
+@keyframes slide-menu-out {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -200px;
+  }
+}

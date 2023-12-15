@@ -1,0 +1,269 @@
+
+.page-template-template-menu-php{
+  .main-screen{
+    .bg-wrapper{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      display: flex;
+      z-index: 1;
+
+      .bg-pic{
+        width: 33.33%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &.pic-left{
+          background-image: url("../img/menu-main-left-pic.jpg");
+        }
+        &.pic-center{
+          background-image: url("../img/menu-main-center-pic.jpg");
+        }
+        &.pic-right{
+          background-image: url("../img/menu-main-right-pic.jpg");
+        }
+      }
+    }
+
+    &:before{
+      z-index: 2;
+    }
+
+    &:after{
+      z-index: 3;
+    }
+
+    .coffee-bg{
+      position: absolute;
+      z-index: 4;
+      width: 20vw;
+      bottom: 0;
+
+      @media(max-width: 992px){
+        width: 25vw;
+      }
+
+      @media(max-width: 767px){
+        width: 30vw;
+      }
+
+      @media(max-width: 575px){
+        width: 50%;
+      }
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+
+      &.coffee-left{
+        left: 0;
+      }
+
+      &.coffee-right{
+        right: 0;
+      }
+    }
+
+    .content{
+      z-index: 5;
+    }
+  }
+}
+
+/*--- Coffee menu ---*/
+
+.menu-type{
+  background-color: $color-black;
+
+  .menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media(max-width: 1200px){
+      margin: 0;
+    }
+
+    .item{
+      list-style: none;
+      display: flex;
+      width: calc(50% - 15px);
+      border-bottom: 1px solid $color-soft-brown;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      align-items: center;
+
+      @media(max-width: 767px){
+        width: 100%;
+      }
+
+      .pic-wrapper{
+        width: 80px;
+        margin-right: 25px;
+
+        @media(max-width: 440px){
+          width: 60px;
+          margin-right: 15px;
+        }
+
+        img{
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .info{
+        padding-right: 15px;
+        width: calc(100% - 185px);
+
+        @media(max-width: 440px){
+          width: calc(100% - 140px);
+        }
+
+        .name{
+          color: $color-soft-brown;
+          font-size: 22px;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          font-family: $f-P-S-bold;
+
+          @media(max-width: 992px){
+            font-size: 20px;
+          }
+
+          @media(max-width: 440px){
+            font-size: 18px;
+            margin-bottom: 15px;
+          }
+        }
+
+        .description{
+          p{
+            margin-bottom: 5px;
+            font-size: 16px;
+            line-height: 1.2;
+            color: $color-soft-gray;
+
+            @media(max-width: 440px){
+              font-size: 14px;
+            }
+
+            &:last-child{
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .price-wrapper{
+        width: 80px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        @media(max-width: 440px){
+          width: 65px;
+        }
+
+        .price{
+          margin-bottom: 10px;
+          text-align: right;
+          color: $color-white;
+          font-size: 16px;
+          line-height: 1;
+          font-family: $f-P-bold;
+          width: 100%;
+
+          @media(max-width: 440px){
+            font-size: 14px;
+          }
+        }
+
+        .add-to-card{
+          width: 24px;
+          height: auto;
+
+          path{
+            fill: $color-white;
+            transition: all 0.5s;
+          }
+        }
+      }
+
+      &.active{
+        .price-wrapper{
+          .add-to-card{
+            path{
+              fill: $color-soft-brown;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  .brown-title{
+    margin-top: 20px;
+  }
+}
+
+.pastries-menu{
+  position: relative;
+
+  .bg-pic{
+    position: absolute;
+    top: 0;
+    width: 15vw;
+
+    @media(max-width: 1200px){
+      width: 20vw;
+    }
+
+    @media(max-width: 767px){
+      width: 25vw;
+    }
+
+    @media(max-width: 440px){
+      width: 35vw;
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+
+    &.left-pic-1{
+      z-index: 2;
+      left: 0;
+    }
+
+    &.right-pic-1{
+      z-index: 2;
+      right: 0;
+    }
+
+    &.left-pic-2{
+      z-index: 1;
+      left: 0;
+      transform: rotate(90deg);
+    }
+
+    &.right-pic-2{
+      z-index: 1;
+      right: 0;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .container,
+  .container-fluid{
+    position: relative;
+    z-index: 3;
+  }
+}

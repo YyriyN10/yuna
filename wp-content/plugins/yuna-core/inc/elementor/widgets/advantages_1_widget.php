@@ -125,6 +125,29 @@
 				]
 			);
 
+			$this->add_control(
+				'text-color',
+				[
+					'label' => esc_html__( 'Text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .inner' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'svg-color',
+				[
+					'label' => esc_html__( 'Svg icon color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'description' => 'the color change is visible only in the live preview',
+					'selectors' => [
+						'{{WRAPPER}} .icon-wrapper .svg-pic path' => 'fill: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

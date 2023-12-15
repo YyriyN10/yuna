@@ -159,6 +159,50 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'case-title-color',
+				[
+					'label' => esc_html__( 'The color of the article title', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .description' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'case-text-color',
+				[
+					'label' => esc_html__( 'The color of the short preview', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'button-text-color',
+				[
+					'label' => esc_html__( 'Button text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .button' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

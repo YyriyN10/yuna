@@ -21,8 +21,23 @@
 	$siteMail = carbon_get_theme_option( 'yuna_site_email' );
 	$siteAccentColor = carbon_get_theme_option('yuna_accent_color');
 	$footerBgColor = carbon_get_theme_option('yuna_footer_bg_color');
+	$footerTextColor = carbon_get_theme_option('yuna_footer_text_color');
 
 ?>
+<?php if( $footerTextColor !='' ):?>
+  <style>
+    .site-footer .contacts p,
+    .site-footer .contacts a,
+    .site-footer .footer-menu li a,
+    .site-footer{
+      color: <?php echo $footerTextColor;?> !important;
+    }
+
+    .site-footer .social-wrapper a svg path{
+      fill: <?php echo $footerTextColor;?>;
+    }
+  </style>
+<?php endif;?>
 </main>
 	<footer class="site-footer" <?php if( $footerBgColor != 'rgba(0,0,0,0)' && $footerBgColor != ''):?>
     style="background-color: <?php echo $footerBgColor;?>"

@@ -114,6 +114,50 @@
 				]
 			);
 
+      $this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+      $this->add_control(
+				'question-text-color',
+				[
+					'label' => esc_html__( 'Question text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .accordion-faq .card .card-header .card-link' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+      $this->add_control(
+				'question-svg-color',
+				[
+					'label' => esc_html__( 'Question arrow color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .accordion-faq .card .card-header .card-link .icon path' => 'fill: {{VALUE}}',
+					],
+				]
+			);
+
+      $this->add_control(
+				'answer-text-color',
+				[
+					'label' => esc_html__( 'Answer text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .card-body' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

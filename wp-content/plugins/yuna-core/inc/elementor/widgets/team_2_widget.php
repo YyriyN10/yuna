@@ -144,6 +144,50 @@
 				]
 			);
 
+			$this->add_control(
+				'title-text-color',
+				[
+					'label' => esc_html__( 'Block title color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .block-title' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'text-color',
+				[
+					'label' => esc_html__( 'Text about color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .team-text-wrapper' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'name-text-color',
+				[
+					'label' => esc_html__( 'Team men name color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .name' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'post-text-color',
+				[
+					'label' => esc_html__( 'Team men position color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .men-post' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
 			$this->end_controls_section();
 
 		}

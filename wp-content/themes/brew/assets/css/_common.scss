@@ -1,0 +1,135 @@
+.page-template-template-contact,
+.page-template-template-about,
+.page-template-templane-news{
+  .main-screen{
+    background-image: url("../img/contacts-main.bg.jpg");
+
+    &:before{
+      display: none;
+    }
+
+    .bg-pic{
+      position: absolute;
+      width: 30vw;
+      bottom: 0;
+      z-index: 4;
+
+      @media(max-width: 992px){
+        width: 40vw;
+      }
+
+      @media(max-width: 575px){
+        width: 50vw;
+      }
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+
+      &.left-pic{
+        left: 0;
+      }
+
+      &.right-pic{
+        right: 0;
+      }
+    }
+
+  }
+}
+
+
+.product-slider{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .slick-track{
+    display: flex;
+  }
+
+  .slick-dots{
+    margin-bottom: 30px;
+  }
+
+  .item{
+    width: 30%;
+    padding: 38px 50px 60px 50px;
+    border-radius: 6px;
+    transition: all 0.5s;
+    text-align: center;
+    position: relative;
+    height: auto;
+    display: grid;
+    margin: 0 7.5px;
+
+    @media(max-width: 767px){
+      padding: 28px 30px 50px 30px;
+    }
+
+    @media(max-width: 380px){
+      padding: 15px 15px 40px 15px;
+    }
+
+    .product-pic{
+      width: 100%;
+      margin-bottom: 32px;
+
+      @media(max-width: 440px){
+        width: 80%;
+        margin: 0 auto 30px;
+      }
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .name{
+      color: $color-soft-brown;
+      margin-bottom: 25px;
+      font-size: 20px;
+      font-family: $f-P-S-bold;
+      line-height: 1;
+    }
+
+    .description{
+      font-size: 16px;
+      margin-bottom: 25px;
+      color: $color-soft-gray;
+    }
+
+    .price{
+      font-family: $f-P-S-bold;
+      color: $color-white;
+      font-size: 20px;
+      margin-bottom: 0;
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+      right: 0;
+
+      @media(max-width: 767px){
+        bottom: 28px;
+      }
+
+      @media(max-width: 380px){
+        bottom: 15px;
+      }
+    }
+
+    &:hover{
+      background: $color-dark;
+      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+
+    }
+
+    &.slick-current{
+      background: $color-dark;
+      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+    }
+
+  }
+}

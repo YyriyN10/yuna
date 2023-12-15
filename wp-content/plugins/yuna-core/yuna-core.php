@@ -28,6 +28,8 @@
 
 		require plugin_dir_path( __FILE__ ) . '/inc/carbon-fields.php';
 
+
+		require plugin_dir_path( __FILE__ ) . '/inc/yuna-carbon-blocks.php';
 		function carbon_lang_prefix() {
 			$prefix = '';
 			if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {

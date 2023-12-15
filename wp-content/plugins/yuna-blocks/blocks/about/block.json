@@ -1,0 +1,63 @@
+{
+  "apiVersion": 3,
+  "title": "Yuna about",
+  "name": "yuna-blocks/about",
+  "category": "yuna-custom-category",
+  "icon": "admin-generic",
+  "editorScript": "file:./block.js",
+  "editorStyle": "file:./editor.css",
+  "style": "file:./style.css",
+  "supports": {
+    "color": {
+      "background": true,
+      "button": false,
+      "text": true,
+      "link": true,
+      "gradients": true,
+      "heading": true
+    },
+    "align": true
+  },
+  "attributes": {
+    "blockTitle": {
+      "type": "string",
+      "source": "html",
+      "selector": ".block-title"
+    },
+    "subtitle": {
+      "type": "string",
+      "source": "html",
+      "selector": ".subtitle"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "imgID": {
+      "type": "number"
+    },
+    "imgURL": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src"
+    },
+    "greedChanger": {
+      "type": "boolean",
+      "default": false
+    },
+    "titleColor": {
+      "type": "string",
+      "default": null
+    }
+  },
+  "example": {
+    "attributes": {
+      "blockTitle": "Enter block title",
+      "subtitle": "Enter sub title",
+      "mediaID": 1,
+      "mediaURL": "https://images.unsplash.com/photo-1549150712-1d243024db80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q= 80"
+
+    }
+  }
+}

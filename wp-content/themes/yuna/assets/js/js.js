@@ -371,6 +371,7 @@ jQuery(function( $ ) {
    * Sliders
    */
 
+
   //Gallery Slider
 
   $('#gallery-slider-1').slick({
@@ -525,6 +526,37 @@ jQuery(function( $ ) {
       },
     });
   }
+
+  /**
+   * More gallery photos
+   */
+
+  $('#gallery-more').on('click', function(e){
+    e.preventDefault();
+
+    $(this).fadeOut(500);
+
+    var moreGallery = {
+      action: 'more_gallery_pic',
+    };
+
+    jQuery.post( myajax.url, moreGallery, function(response) {
+
+      if(jQuery.trim(response) !== ''){
+
+        jQuery('#gallery-list').append(response);
+      }
+    });
+
+  })
+
+
+
+
+
+
+
+
 
 
 

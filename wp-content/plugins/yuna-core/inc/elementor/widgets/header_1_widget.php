@@ -88,16 +88,6 @@
 				]
 			);
 
-			$this->add_control(
-				'block-id',
-				[
-					'label' => esc_html__( 'Button scroll down to block ID', 'yuna' ),
-					'type' => \Elementor\Controls_Manager::TEXT,
-					'label_block' => true,
-					'placeholder' => esc_html__( 'Enter block ID', 'yuna' ),
-				]
-			);
-
 			$this->end_controls_section();
 
 			$this->start_controls_section(
@@ -122,10 +112,33 @@
 			$this->add_control(
 				'before-bg-color',
 				[
-					'label' => esc_html__( 'Cases block background color ', 'yuna' ),
+					'label' => esc_html__( 'A semi-transparent color over the background image', 'yuna' ),
 					'type' => \Elementor\Controls_Manager::COLOR,
 					'selectors' => [
 						'{{WRAPPER}} .main-screen:before' => 'background-color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'text-color',
+				[
+					'label' => esc_html__( 'Text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .main-screen .content' => 'color: {{VALUE}}',
+					],
+				]
+			);
+
+			$this->add_control(
+				'btn-text-color',
+				[
+					'label' => esc_html__( 'Button text color', 'yuna' ),
+					'type' => \Elementor\Controls_Manager::COLOR,
+					'selectors' => [
+						'{{WRAPPER}} .main-screen .content .button' => 'color: {{VALUE}}',
+						'{{WRAPPER}} .main-screen .content .button:hover' => 'color: {{VALUE}}',
 					],
 				]
 			);
@@ -146,6 +159,8 @@
 		protected function render() {
 
 			$settings = $this->get_settings_for_display();
+
+
 			
 			?>
 				<section class="main-screen" style="background-image: url('<?php echo esc_url($settings['image']['url']);?>')">
